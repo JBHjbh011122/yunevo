@@ -52,7 +52,7 @@ server {
         fastcgi_send_timeout       3600;
         fastcgi_read_timeout       3600;
         fastcgi_buffer_size 128k;
-        fastcgi_buffers_4 256k;
+        fastcgi_buffers 4 256k;
         fastcgi_busy_buffers_size 256k;
         fastcgi_temp_file_write_size 256k;
     }
