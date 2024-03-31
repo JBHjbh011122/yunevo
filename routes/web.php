@@ -62,7 +62,7 @@ Route::get('/modifier-video/{video_id}', [VideoController::class, 'showUpdateFor
 Route::get('/videos-publiques-par-categorie/{category}', [VideoController::class, 'showPublicVideosByCategory'])->name('videos-par-categorie');
 Route::get('/videos-publiques-entraineur', [VideoController::class, 'showPublicVideos'])->name('voir-public-video');
 Route::get('/videos-privees-entraineur', [VideoController::class, 'showPrivateVideos'])->name('voir-privees-video');
-Route::get('/allvideos-publiques', [VideoController::class, 'showAllPublicVideos'])->name('videos-publiques');           
+Route::get('/allvideos-publiques', [VideoController::class, 'showAllPublicVideos'])->name('videos-publiques');
 Route::get('/detail-video/{video_id}', [VideoController::class, 'show'])->name('detail-video');
 
 //  ========== Blog ==================================
@@ -228,7 +228,7 @@ Route::get('/boite-reception/envoye-detail/{id}', [BoiteReceptionController::cla
 Route::post('/boite-reception/store', [BoiteReceptionController::class, 'store'])->name('boite-reception.store');
 // Lettre automatique
 Route::get('/entraineur/{entraineurId}/contacter', [BoiteReceptionController::class, 'composeMessage'])->name('compose.message');
-Route::get('/compose/{replyTo?}', [BoiteReceptionController::class, 'compose'])->name('boite-reception.compose');
+// Route::get('/compose/{replyTo?}', [BoiteReceptionController::class, 'compose'])->name('boite-reception.compose');
 // Itinéraire pour la suppression massive de messages
 Route::post('/boite-reception/destroy-multiple', [BoiteReceptionController::class, 'destroyMultiple'])->name('boite-reception.destroyMultiple');
 

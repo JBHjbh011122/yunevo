@@ -12,12 +12,12 @@ class Commande extends Model
 
     public function entraineur()
     {
-        return $this->belongsTo(Entraineur::class, 'entraineur_id','id');
+        return $this->belongsTo(Entraineur::class, 'entraineur_id','entraineur_id');
     }
 
     public function client()
     {
-        return $this->belongsTo(Client::class, 'client_id','id');
+        return $this->belongsTo(Client::class, 'client_id','client_id');
     }
 
     public function video()
