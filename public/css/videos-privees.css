@@ -1,0 +1,23 @@
+/* secondary-navbar */
+.secondary-navbar {
+    position: sticky !important;
+    top: 100px;
+    z-index: 2 !important; 
+    padding: 0;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+@media (max-width: 768px) {
+    .secondary-navbar {
+      height: auto; 
+    }
+    .nav-link, .nav-item{
+    font-size: 14px !important; 
+    padding: 2px !important;
+    margin: 0px !important;
+    }
+}
+

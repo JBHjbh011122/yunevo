@@ -1,0 +1,24 @@
+
+[
+    {
+    "image":"images/person-1.png",
+    "prenom": "Maxime ",
+    "nom": "Lefevre",
+    "category": "CrossFit",
+    "description": "Mes séances de CrossFit sont conçues pour la force fonctionnelle, l'endurance et la flexbilité. Chaque session comprend un mélange d'exercices avec des poids,des exercices gymniques er des exercices cardio.Je propose des WOD(Workout of the day) intensifs et variés pour pousser les participants à dépasser leurs limites à Chaque séance."
+    },
+    {
+    "image":"images/person-2.png",
+    "prenom": "Sophie",
+    "nom": "Girard",
+    "category": "Yoga et méditation",
+    "description": "Mes séance commencent par une méditation relaxante, suive d'un ensemble d'assanas pour améliorer la flexibilité,la force et l'equillibre,et se terminent par une relaxation profonde et une m/ditation contemplative.Je mets l'accent wur la respiration correct et la conscience dans chaque mouvement,créant un environnement harmonieux et apaisant pour la pratique."
+    },
+    {
+    "image":"images/person-3.png",
+    "prenom": "Arthur",
+    "nom": "Lemoine",
+    "category": "Entraînement fonctionnel",
+    "description": "Mes sessions d'entrainement fonctionnel visent à amélior la force,la flexibilité,et l'endurance de mes élèves.Nous travaillerons avec le poids de votre prope corps et,parfois,avec des équipements simples comme des bandes élastiques ou des kettlebells.Chaque séance sera adaptée en fonction de votre niveau de fitness et de vos objectifs personnels.À travers des exercices variés,je vous guiderai pour améliorer votre posture,votre coordination,et votre performance globale,tout cela dans le confort de votre domicile,en ligne."
+    }
+    ]

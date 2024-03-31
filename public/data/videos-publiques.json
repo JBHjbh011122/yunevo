@@ -1,0 +1,40 @@
+{
+    "videos": [
+        {
+            "video_link": "video/alexandre.mp4",
+            "trainer_name": "Alexandre Le Blanc",
+            "training_category": "Entraînement de force",
+            "description": "Dans cette session, je vous guiderai à travers une série d'exercices de pompes bien structurés..."
+        },
+        {
+            "video_link": "video/sophie.mp4",
+            "trainer_name": "Sophie Bonchance",
+            "training_category": "Yoga et Méditation",
+            "description": "Aujourd'hui, je vous invite à explorer un voyage méditatif pour calmer l'esprit et réduire le stress...Aujourd'hui, je vous invite à explorer un voyage méditatif pour calmer l'esprit et réduire le stress"
+        },
+        {
+            "video_link": "video/jean-paul.mp4",
+            "trainer_name": "Jean-Paul Dumont",
+            "training_category": "Cardio",
+            "description": "Dans cette video d'entraînement cardio enflammée, je vous guiderai à travers une série d'exercices dynamiques..."
+        },
+        {
+            "video_link": "video/trainer4.mp4",
+            "trainer_name": "Stéphane Durand",
+            "training_category": "Fitness et Flexibilité",
+            "description": "Rejoignez Stéphane dans une séance intense axée sur l'amélioration de la flexibilité et le renforcement du corps entier..."
+        },
+        {
+            "video_link": "video/jean-paul.mp4",
+            "trainer_name": "Jean-Paul Dumont",
+            "training_category": "Cardio",
+            "description": "Dans cette video d'entraînement cardio enflammée, je vous guiderai à travers une série d'exercices dynamiques..."
+        },
+        {
+            "video_link": "video/trainer4.mp4",
+            "trainer_name": "Stéphane Durand",
+            "training_category": "Fitness et Flexibilité",
+            "description": "Rejoignez Stéphane dans une séance intense axée sur l'amélioration de la flexibilité et le renforcement du corps entier..."
+        }
+    ]
+}

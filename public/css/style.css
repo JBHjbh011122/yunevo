@@ -1,0 +1,297 @@
+/* Styles généraux */
+body, html {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0; /* Supprime la marge intérieure (padding-top) */
+    background-color: #f5f5f5;
+    min-height: 100vh; /* Assurez-vous que min-height est appliqué pour que le pied de page soit en bas des pages courtes */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Barre de navigation (navbar) */
+.navbar {
+    background-color:  #8BB08E; /* Essayez d'éviter l'utilisation de !important autant que possible */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 100px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1030; /* Z-index standard de Bootstrap pour la barre de navigation */
+}
+.nav-item {
+    display: flex;
+    align-items: center;
+}
+
+/* Autres styles... */
+
+/* Définit la marge supérieure pour le contenu principal */
+.main-content {
+    padding-top: 100px; /* Marge supérieure pour compenser la hauteur de la barre de navigation */
+    flex: 1; /* Étire le contenu pour que le pied de page reste en bas */
+}
+.priv-titte .main-content {
+    padding-top: 100px;
+    flex: 1;
+}
+/* Autres styles pour le pied de page... */
+
+.navbar-brand {
+    color: #000000; /* Couleur du texte du logo */
+    font-weight: bold; /* Poids de la police du logo */
+    font-size: 3vw !important;
+}
+
+.nav-link {
+  margin-right: 35px;
+  font-size: 20px !important; /* Taille de police agrandie pour les liens */
+  font-weight: bold !important;
+  color:black !important;
+}
+
+.nav-link:hover {
+    color: #AE8B2F!important; /* Couleur du texte du lien au survol */
+    text-decoration: none; /* Supprime le soulignement au survol */
+}
+
+.nav-item.active .nav-link {
+    color: #ffffff !important; /* Couleur du texte blanche pour le lien actif */
+    font-weight: bold !important;
+}
+
+
+@media (max-width: 1000px) {
+    .navbar {
+        min-height: 60px;
+    }
+    .navbar-brand {
+        font-size: 4vw !important;
+    }
+    .nav-link {
+        font-size: 18px !important;
+    }
+}
+
+
+footer {
+    height: 100px;
+    margin-top: 1%;
+    width: 100%;
+}
+
+/* Pied de page (footer) */
+.custom-footer {
+    background-color:  #8BB08E;
+    padding: 15px 0;
+    margin-top: auto;
+    font-size: 16px; /* La taille du texte dépendra de la largeur de l'écran */
+    font-weight: 600;
+    width: 100%; 
+}
+
+@media (max-width: 600px) {
+    footer {
+        height: auto; /* Supprime la hauteur fixe sur les petits écrans */
+        margin-top: 1%;
+    }
+    .custom-footer .container .row {
+        flex-direction: column;
+        margin-bottom: 5px;
+    }
+    .custom-footer .col-auto {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+    .custom-footer .footer-item {
+        margin-top: 1px;
+        margin-bottom: 1px;
+        font-size: 14px;
+    }
+    .custom-footer a {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.col-auto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-item {
+    flex: 1;
+    margin: 5px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.icon, .footer-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Augmente la taille de l'icône */
+.icon  {
+    font-size: 30px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Texte entièrement noir */
+.footer-item {
+    color: #000;
+    text-align: center;
+}
+
+.fab {
+    text-decoration: none !important;
+    color: black !important;
+}
+
+.logo {
+    margin-bottom: 0.5vw;
+    width: 3.5vw;
+}
+
+/* Superposition (overlay) */
+.overlay-nav {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(96, 131, 103, 0.9); /* Noir avec opacité */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+
+}
+
+/* Liens de navigation à l'intérieur de l'overlay */
+.overlay-nav a {
+    padding: 20px;
+    text-decoration: none;
+    font-size: 40px!important;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+/* Positionne le bouton de fermeture (coin supérieur droit) */
+.overlay-nav .closebtn {
+    position: absolute;
+    top: 100px;
+    right: 20px;
+    font-size: 40px;
+    color: #000000;
+    cursor: pointer;
+    background-color: #AE8B2F;
+}
+
+/* Masque l'overlay plein écran initialement */
+#mobileNav {
+    display: none;
+    z-index: 9999;
+}
+
+/* secondary-navbar */
+.secondary-navbar {
+    background-color: #D9D9D9;
+    padding-top: 120px ;
+    padding-bottom: 20px;
+}
+
+.secondary-navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.secondary-navbar li {
+    margin: 0 13px;
+}
+
+.secondary-navbar a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.secondary-navbar .nav-item.active-secondary .nav-link {
+    color: #AE8B2F !important;
+}
+
+@media (max-width: 768px) {
+    .secondary-navbar ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .secondary-navbar li {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .custom-footer {
+        font-size: 10px;
+    }
+}
+/* Style pour le texte "Responsabilité" à l'intérieur de l'élément avec la classe .responsabilite-link (état inactif) */
+.responsabilite-link {
+    color: black !important;
+    text-decoration: none; /* Supprime le soulignement */
+}
+
+/* Style pour l'état au survol */
+.responsabilite-link:hover {
+    color: #AE8B2F !important; /* Couleur au survol */
+    text-decoration: none; /* Supprime le soulignement */
+}
+
+/* Style pour le texte "Responsabilité" à l'intérieur de l'élément avec la classe .responsabilite-link sur la page active */
+.responsabilite-link.active {
+    color: white !important; /* Couleur pour la page active */
+    text-decoration: none !important; /* Supprime le soulignement */
+}
+
+@media (max-width: 1298px) {
+
+    .nav-link {
+        font-size: 17px !important;
+    }
+}
+
+.notification-icon {
+    height: 32px;
+    width: auto;
+}
+
+.custom-footer a,
+.custom-footer a:hover {
+    text-decoration: none;
+    color: inherit;
+}

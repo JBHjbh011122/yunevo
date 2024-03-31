@@ -1,0 +1,40 @@
+{
+    "messages": [
+        {
+            "id": 1,
+            "sender": "Entraîneur Jean",
+            "recipient": "Client Marie",
+            "subject": "Séance d'entraînement de demain",
+            "body": "Bonjour Marie, je voulais vous rappeler que votre séance d'entraînement est prévue demain à 10h. Assurez-vous d'être prête !",
+            "timestamp": "2023-12-09T14:48:00.000Z",
+            "read": false
+        },
+        {
+            "id": 2,
+            "sender": "Client Marie",
+            "recipient": "Entraîneur Jean",
+            "subject": "RE: Séance d'entraînement de demain",
+            "body": "Bonjour Jean, Merci pour le rappel. J'ai bien noté l'heure de la séance. À demain, Marie",
+            "timestamp": "2023-12-09T15:02:00.000Z",
+            "read": true
+        },
+        {
+            "id": 3,
+            "sender": "Entraîneur Jean",
+            "recipient": "Client Marie",
+            "subject": "Programme d'entraînement personnalisé",
+            "body": "Bonjour Marie, voici votre nouveau programme d'entraînement personnalisé. Nous allons nous concentrer sur la force et la flexibilité ce mois-ci. Bonne séance !",
+            "timestamp": "2023-12-10T09:15:00.000Z",
+            "read": false
+        },
+        {
+            "id": 4,
+            "sender": "Client Marie",
+            "recipient": "Entraîneur Jean",
+            "subject": "RE: Programme d'entraînement personnalisé",
+            "body": "Merci Jean ! Je suis impatiente de commencer le nouveau programme. À bientôt, Marie",
+            "timestamp": "2023-12-10T09:45:00.000Z",
+            "read": true
+        }
+    ]
+}

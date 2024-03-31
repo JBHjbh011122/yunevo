@@ -1,0 +1,360 @@
+/* Styles généraux */
+
+/* Image dans la section "Introduction" */
+.intro-image {
+    position: relative; /* Position relative */
+    padding-top: 100px;
+}
+
+/* Styles de l'image */
+.intro-image img {
+    width: 100%;
+    max-width: 100%;
+    height: auto; /* Largeur de 100%, hauteur automatique */
+}
+
+/* Section du texte superposé à l'image */
+.text-part {
+    position: absolute; /* Position absolue */
+    top: 50%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(243, 237, 217, 0.8); /* Couleur de fond avec transparence */
+    padding: 3% 5%;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre */
+    max-width: 50%;
+
+}
+
+/* Titre h2 */
+h2 {
+    line-height: 1.0; /* Hauteur de ligne */
+    margin-bottom: 2%;
+    font-size: 2.0vw; /* Taille de police en vw (unité relative) */
+}
+
+/* Bouton personnalisé */
+.btn-custom, .btn-publiques, button {
+    background-color: #AE8B2F; /* Couleur de fond */
+    color: #333;
+    border: none; /* Pas de bordure */
+    padding: 1vw 1.5vw;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.5vw;
+    transition: background-color 0.3s ease; /* Transition sur la couleur de fond */
+    font-weight: bold;
+}
+
+/* Au survol du bouton */
+.btn-custom:hover, .btn-publiques:hover, button:hover {
+    background-color: #FFC400; /* Changement de couleur de fond au survol */
+}
+
+/* Texte de grande taille */
+.larger-text {
+    font-size: 2.8em;
+    font-weight: bold;
+}
+
+/* Section des vidéos publiques */
+.video-publiques {
+    padding: 5% 3%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #8BB08E; /* Couleur de fond */
+}
+
+/* Texte dans la section des vidéos publiques */
+.video-publiques p {
+    font-size: 2.0vw;
+    max-width: 60%;
+    margin-right: 20%;
+}
+
+/* Section des avantages */
+.advantages-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 30px;
+    font-size: 1.8vw;
+}
+
+/* Colonnes d'avantages */
+.advantage-columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+/* Élément d'avantage et image */
+.advantage-item, .advantage-image {
+    width: 80%;
+    box-sizing: border-box;
+}
+
+/* Colonne d'avantage */
+.advantage-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+}
+
+/* Icône d'avantage */
+.advantage-icon {
+    width: 4vw;
+    height: 4vw;
+    margin: 1vw;
+}
+
+/* Titre h3 pour les colonnes d'avantages */
+.advantage-columns h3 {
+    font-size: 2.5vw;
+}
+
+/* Titre de la section "Avantages" */
+.title-avan {
+    font-size: 3.2vw;
+    margin-bottom: 3%;
+}
+
+/* Carrousel des avis */
+#reviewsCarousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Section des avis */
+.reviews-section {
+    background-color: #8BB08E;
+    padding: 2%;
+    text-align: center;
+}
+
+/* Conteneur de l'avis */
+.review-container {
+    display: flex;
+    align-items: center;
+    max-width: 40%;
+    margin: 0 auto;
+    font-size: 1.4vw;
+}
+
+/* Partie gauche de l'avis */
+.review-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    font-size: 2.0vw;
+}
+
+/* Partie droite de l'avis */
+.review-right {
+    flex: 2;
+    text-align: left;
+    padding-left: 20px;
+}
+
+/* Conteneur interne du carrousel */
+.carousel-inner {
+    margin-bottom: 4%;
+}
+
+/* Image de l'avis dans le carrousel */
+.carousel-review-image {
+    border-radius: 50%;
+    width: 5vw;
+    height: 5vw;
+    margin-right: 20px;
+}
+
+/* Titre h3 et étoiles */
+.carousel-review-content h3, .stars {
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+/* Étoiles de notation */
+.stars {
+    font-size: 1.5em;
+}
+
+/* Texte de l'avis */
+.carousel-review-content p {
+    margin-bottom: 30px;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Section d'enregistrement */
+.reg-section {
+    padding: 7%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Section "Rejoindre l'équipe" */
+.join-team-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Partie texte de la section */
+.text-section {
+    flex: 1;
+    margin-right: 10%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Conteneur de bouton */
+.btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1%;
+}
+
+/* Image dans la section "Rejoindre l'équipe" */
+.join-team-section img {
+    max-width: 25%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Texte dans la partie texte */
+.text-section p {
+    font-size: 1.8vw;
+}
+
+/* Media queries pour les petits écrans */
+@media (max-width: 768px) {
+    /* Sections "video-publiques", "advantages-section" et "reg-section" */
+    .video-publiques, .advantages-section, .reg-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .video-publiques p, .text-section p {
+        font-size: 20px;
+        max-width: 100%;
+        margin-right: 0;
+    }
+
+    .btn-publiques, .btn-custom, button {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+
+    /* Section "advantage-columns" sur de petits écrans */
+    .advantage-columns {
+        grid-template-columns: 1fr;
+        gap: 2px;
+    }
+
+    .title-avan {
+        margin-bottom: 10px;
+    }
+
+    .advantage-column {
+        margin-top: -10px;
+    }
+    .join-team-section {
+        flex-direction: column-reverse;
+    }
+    .advantage-column {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .advantage-image {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 1px;
+    }
+
+    .advantage-item {
+        margin-bottom: 2px;
+    }
+
+    .review-right {
+        font-size: 10px;
+    }
+}
+
+/* Media queries pour les très petits écrans */
+@media (max-width: 668px) {
+
+    .larger-text{
+        font-size: 16px;
+    }
+
+    /* Section "intro-image" sur les très petits écrans */
+    .intro-image h2 {
+        font-size: 2.9vw;
+    }
+
+    /* Section "video-publiques" sur les très petits écrans */
+    .video-publiques p {
+        font-size: 16px;
+    }
+
+    .btn-publiques, .btn-custom {
+        font-size: 14px;
+    }
+
+    /* Section "advantages-section" sur les très petits écrans */
+    .advantages-section {
+        font-size: 14px;
+    }
+
+    .advantage-columns h3 {
+        font-size: 16px;
+    }
+
+    /* Section "reg-section" sur les très petits écrans */
+    .reg-section .text-section p {
+        font-size: 14px;
+    }
+
+    .title-avan {
+        font-size: 20px;
+    }
+    .intro-image {
+        padding-top: 100px; 
+    }
+}
+@media (max-width: 500px) {
+    /* Mise à jour des styles pour text-part sur les très petits écrans */
+    .text-part {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 15px 30px;
+        max-width: 100%;
+        width: 100%;
+        background-color: rgba(243, 237, 217, 0.8);
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin-top: 80px;
+    }
+    .intro-image {
+        padding-top: 100px; 
+    }
+}

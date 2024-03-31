@@ -1,0 +1,78 @@
+.header {
+    height: 100px;
+}
+
+.stars {
+    margin-top: 2vw;
+}
+
+.carousel-review-image {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+    float: left;
+}
+
+.avis-card {
+    background-color: rgba(243, 237, 217, 0.8);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.avis-right {
+    margin-left: 10vw;
+}
+
+.avis-container {
+    overflow: hidden;
+}
+
+.stars {
+    font-weight: bold;
+    margin-bottom: 1em;
+
+}
+
+.carousel-review-content p {
+    margin-bottom: 30px;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bin{
+    width: 20px;
+    height: 20px;
+    margin: 5pt;
+  }
+
+  .category-icons{
+    display:flex;
+    justify-content:space-between
+  }
+
+  .icons{
+    display:flex;
+  }
+
+  /* Bouton profil */
+.btn-custom {
+    background-color: #AE8B2F;
+    color: #333;
+    border: none;
+    padding: 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+    text-decoration: none !important;
+    color: black !important;
+    text-align: center;
+}
+
+.btn-custom:hover {
+    background-color: #FFC400;
+}

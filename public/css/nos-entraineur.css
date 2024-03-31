@@ -1,0 +1,235 @@
+
+.liste-entraineur{
+    width:75%;
+}
+
+.info-entraineur{
+    display:flex;
+    background-color: white;
+    border:none;
+    flex-wrap: wrap;
+}
+
+.col-md-2.mb-4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-title{
+    margin-top: 20px;
+}
+
+.info{
+    min-height: 800px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* 100% de la hauteur de la fenêtre accueil */
+}
+
+.entraineur-title{
+    font-size:50px;
+    margin-top: 100px;
+}
+
+.rounded-circle{
+    text-align: center;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+.btn-contacter{
+    height: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.dropdown-menu {
+    border-radius: 0.25rem; /* Coins arrondis */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre pour le menu déroulant */
+    text-decoration: none;
+}
+
+.btn-pr {
+    background-color: #AE8B2F; /* Couleur du bouton correspondant à votre marque */
+    border: none; /* Supprimer la bordure */
+    padding: 0.6rem;
+    color: #fff;
+}
+
+.btn-pr:hover {
+    background-color: #FFC400; /* Couleur au survol */
+    color: #fff;
+}
+
+.dropdown-item {
+    color: #333; /* Couleur du texte des éléments */
+}
+
+.dropdown-item:hover {
+    background-color: #f5f5f5; /* Couleur de fond des éléments au survol */
+}
+
+@media only screen and (max-width: 900px) {
+    .info {
+        margin-top: -70px;
+    }
+
+}
+
+[data-tooltip] {
+    position: relative;
+}
+
+[data-tooltip]:hover::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    width: 200px;
+    padding: 5px;
+    background-color: #D9D9D9;
+    color: black;
+    border-radius: 5px;
+    white-space: normal;
+    transform: translateX(-50%);
+    pointer-events: none;
+    text-align: left;
+    z-index: 1000;
+    font-weight: normal;
+    font-size: 13px;
+}
+
+[data-tooltip]:hover::after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 0 5px 5px 5px;
+    border-color: transparent transparent #666 transparent;
+    top: calc(100% - 2px);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/* ajouter */
+h1 {
+    text-align: center; /* Centrer le texte du titre */
+    padding: 2.25rem; /* Espacement interne pour l'en-tête */
+    background-color: #fff; /* Couleur de fond blanc pour l'en-tête */
+    margin-bottom: 2.25rem; /* Marge inférieure pour l'en-tête */
+    box-shadow: 0px 0.125rem 0.3125rem rgba(0, 0, 0, 0.1); /* Ombre pour l'en-tête */
+    width: 100%;
+}
+body {
+    font-family: Arial, sans-serif; /* Police du corps */
+    background-color: #f5f5f5; /* Couleur de fond du corps */
+    margin: 0; /* Marge par défaut à 0 */
+    padding: 0; /* Padding par défaut à 0 */
+}
+
+
+.gris{
+    color: #666; /* Couleur plus douce pour la catégorie de formation */
+}
+
+@media (max-width: 450px){
+    .rounded-circle{
+        margin-top: 20px;
+    }
+}
+.text-center {
+    text-align: center; /* Centrer le texte du titre */
+    padding: 2.25rem; /* Espacement interne pour l'en-tête */
+    background-color: #fff; /* Couleur de fond blanc pour l'en-tête */
+    margin-bottom: 2.25rem; /* Marge inférieure pour l'en-tête */
+    box-shadow: 0px 0.125rem 0.3125rem rgba(0, 0, 0, 0.1); /* Ombre pour l'en-tête */
+    width: 100%;
+    margin-top: 100px;
+}
+
+
+.dropdown-menu {
+    border-radius: 0.25rem; /* Coins arrondis */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre pour le menu déroulant */
+    text-decoration: none;
+}
+
+.btn-pr {
+    background-color: #AE8B2F; /* Couleur du bouton correspondant à votre marque */
+    border: none; /* Supprimer la bordure */
+    padding: 0.6rem;
+    color: #fff;
+}
+
+.btn-pr:hover {
+    background-color: #FFC400; /* Couleur au survol */
+    color: #fff;
+}
+
+.dropdown-item {
+    color: #333; /* Couleur du texte des éléments */
+}
+
+.dropdown-item:hover {
+    background-color: #f5f5f5; /* Couleur de fond des éléments au survol */
+}
+/* Existing styles for larger screens */
+.dropdown-menu {
+    position: absolute;
+    z-index: 1000;
+
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 900px) {
+    .dropdown-menu {
+        position: relative;
+        z-index: 0;
+        width: 100%;
+        box-shadow: none;
+    }
+    .info {
+        margin-top: 0;
+    }
+}
+
+/* pour fenetre delete */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1050; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 35% auto; 
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%; 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.modal-buttons button {
+    margin: 10px;
+    padding: 10px 15px; 
+    background-color: #007bff; 
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.bg-typ{
+    /* background-color: #D9D9D9; */
+    color: #AE8B2F;   
+}

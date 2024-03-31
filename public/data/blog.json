@@ -1,0 +1,40 @@
+{
+    "articles": [
+        {
+            "image_link": "images/bicycle.jpg",
+            "title": "Découvrez la joie des balades à vélo",
+            "description": "Description courte de l'article sur les balades à vélo.",
+            "author_name": "Jean Dupont",
+            "publication_date": "10 octobre 2023",
+            "content": "Contenu complet de l'article ...",
+            "author_image": "images/woman-a.jpg"
+        },
+        {
+            "image_link": "images/capsules.jpg",
+            "title": "Oméga-3: Petites Capsules pour une Grande Santé",
+            "description": "Bonjour chers lecteurs! Je m'appelle Alexandra et je suis une diététicienne certifiée avec plus d'une décennie d'expérience...",
+            "author_name": "Alexandra Smirnova",
+            "publication_date": "15 octobre 2023",
+            "content": "Les acides gras oméga-3 sont depuis longtemps une partie intégrante de mes recommandations nutritionnelles pour mes patients. Ces molécules incroyables jouent un rôle clé dans le maintien de la santé de notre cœur, cerveau et articulations, et contribuent globalement à améliorer notre qualité de vie. Dans ce blog, je souhaite partager avec vous des informations importantes sur les acides gras oméga-3 ...",
+            "author_image": "images/woman-a.jpg"
+        },
+        {
+            "image_link": "images/asparagus.jpg",
+            "title": "Délicieux et Sain: Steak avec Asperges et Tomates",
+            "description": "Description courte de l'article sur le steak avec asperges et tomates.",
+            "author_name": "Lucie Lavoie",
+            "publication_date": "12 octobre 2023",
+            "content": "Contenu complet de l'article ...",
+            "author_image": "images/woman-1439909_640.jpg"
+        },
+        {
+            "image_link": "images/yoga-blog.jpg",
+            "title": "Harmonie du Yoga: Chemin vers la Tranquillité Intérieure",
+            "description": "Description courte de l'article sur l'harmonie du yoga.",
+            "author_name": "Sophie Martin",
+            "publication_date": "5 octobre 2023",
+            "content": "Contenu complet de l'article ...",
+            "author_image": "images/woman-1439909_640.jpg"
+        }
+    ]
+}

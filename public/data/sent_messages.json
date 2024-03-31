@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "recipient": "Jean Dupont",
+        "sender": "Entraîneur Jean",
+        "subject": "Séance d'entraînement de demain",
+        "body": "Bonjour Jean, je voulais vous rappeler que votre séance d'entraînement est prévue demain à 15h00. Assurez-vous d'être prêt !",
+        "timestamp": "2023-08-30T15:02:00.000Z"
+    },
+    {
+        "id": 2,
+        "recipient": "Entraîneur Pierre",
+        "sender": "Entraîneur Jean",
+        "subject": "Programme d'entraînement personnalisé",
+        "body": "Merci pour le rappel ! Je serai prêt pour la séance demain à 15h00. J'ai hâte de continuer notre travail.",
+        "timestamp": "2023-11-19T15:30:00.000Z"
+    },
+    {
+        "id": 3,
+        "recipient": "Jean Dupont",
+        "sender": "Entraîneur Jean",
+        "subject": "Re : Séance d'entraînement de demain",
+        "body": "Super ! Je suis également excité. À demain à 15h00 !",
+        "timestamp": "2023-12-22T16:05:00.000Z"
+    },
+    {
+        "id": 4,
+        "recipient": "Entraîneur Pierre",
+        "sender": "Entraîneur Jean",
+        "subject": "RE: Programme d'entraînement personnalisé",
+        "body": "Parfait, à demain à 15h00. N'hésitez pas à me faire savoir si vous avez des questions d'ici là.",
+        "timestamp": "2023-11-09T16:30:00.000Z"
+    }
+]

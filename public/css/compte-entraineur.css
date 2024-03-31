@@ -1,0 +1,357 @@
+
+.grid-container-entraineur {
+    display: grid;
+    padding: 10px;
+    grid-template-columns: 1fr 2fr;
+  }
+  .profil{
+      display:flex;
+      text-align:left;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      padding: 25px;
+  }
+  .img-profil{
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border-color:  #8BB08E;
+      border-style: double;
+  }
+  .nom-profil{
+      text-align:center;
+  }
+  /* Bouton profil */
+  .btn-custom {
+      background-color: #AE8B2F;
+      color: #333;
+      border: none;
+      padding: 10px;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-weight: bold;
+      text-decoration: none !important;
+      color: black !important;
+      text-align: center;
+  }
+  .button-profil{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+  .button-container button {
+    flex: 1;
+  }
+  .btn-custom:hover {
+      background-color: #FFC400;
+  }
+  .compte-entraineur span{
+    border-bottom:solid;
+    border-color:  #AE8B2F;
+  }
+  .compte-entraineur{
+    padding-bottom: 15px;
+    white-space: nowrap;  /* pas de retour à la ligne du texte */
+  }
+
+  /* ====Video===*/
+  .videos-publiques {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Styles pour l'élément vidéo */
+  .video-item {
+      max-width: 80rem; /* Largeur maximale de l'élément vidéo */
+      margin: 0rem 1rem; /* Ajoute une marge de 1rem de tous les côtés de l'élément vidéo */
+      background-color: #fff;/*  Couleur de fond pour l'élément vidéo */
+      box-shadow: 0px 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);  /* Ombre pour l'élément vidéo */
+      margin-bottom: 2rem; /* Marge inférieure pour l'élément vidéo */
+      padding: 2rem; /* Espacement interne pour l'élément vidéo */
+      display: grid; /* Utilisation de grid pour agencer les éléments à l'intérieur */
+      grid-template-rows: auto 1fr auto; /* Utilisation de grid pour agencer les éléments à l'intérieur */
+      gap: 2rem; /* Espacement entre les éléments à l'intérieur de l'élément vidéo */
+      z-index: 1; /* Будет ниже secondary-navbar */
+  }
+
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* This is the key for maintaining a 16:9 aspect ratio. Adjust if needed. */
+    overflow: hidden;
+  }
+
+  .video-item h5, .video-item h6 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+  }
+
+  .video-item h5 {
+    margin-bottom: -1.5rem;
+    font-size: 1.5rem;
+  }
+
+  .video-item h6 {
+    margin-bottom: -1.5rem;
+    color: #666;
+  }
+
+  .more {
+    width: 20px;
+    height: 20px;
+    margin: 5pt;
+    size: 1vw;
+  }
+  .pen{
+    width: 20px;
+    height: 20px;
+    margin: 5pt;
+  }
+  .bin{
+    width: 20px;
+    height: 20px;
+    margin: 5pt;
+  }
+  .icons{
+    display:flex;
+  }
+
+  /* Styles pour le conteneur des vidéos */
+  .container-videos {
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* 2 colonnes par défaut */
+      gap: 1.25rem; /* Espacement entre les vidéos */
+  }
+  /* Réponse aux petits écrans */
+  @media (max-width: 1025px) {
+      .container-videos {
+          grid-template-columns: 1fr; /* Une seule colonne pour les petits écrans */
+      }
+  }
+  /* Réponse pour les grands écrans */
+  @media (min-width: 1700px) {
+      .container-videos {
+          grid-template-columns: repeat(2, 1fr); /* 3 colonnes pour les grands écrans */
+      }
+  }
+  select {
+      margin-left: 11%;
+  }
+
+  /* ============ Blog ========================*/
+  /* Styles pour les articles de blog */
+  .article-item-blog{
+    height: 300px;
+    max-width: 80rem;
+    margin: 0rem 1rem;
+    background-color: #fff;
+    box-shadow: 0px 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    padding: 2rem;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 2rem;
+    font-size: 2.0vw;
+    padding: 15px; 
+    margin-bottom: 20px; 
+    background-color: #fff; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+  }
+  .img-blog{
+    width: 100%; 
+    max-height: 200px; 
+    object-fit: contain;
+  }
+  /* Styles pour le conteneur des articles */
+  .container-articles-blog {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  /* Réponse aux petits écrans */
+  @media (max-width: 1025px) {
+    .container-articles-blog  {
+        grid-template-columns: 1fr;
+    }
+  }
+  /* Réponse pour les grands écrans */
+  @media (min-width: 1700px) {
+    .container-articles-blog {
+        grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  .video-item:last-child {
+      padding-right: none;
+  }
+    .img-video {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
+    .droite-compte-entraineur{
+      padding: 15px;
+    }
+    @media (max-width: 768px) {
+      .grid-container-entraineur {
+          grid-template-columns: 1fr;
+      }
+      .element-class {
+          max-width: 100%;
+      }
+    }
+
+  /*=============== Laravel ===========*/
+  .header{
+      height: 100px;
+  }
+  /* secondary-navbar */
+  .secondary-navbar {
+      position: sticky !important;
+      top: 100px;
+      z-index: 2 !important; /* Vidéo ci-dessus */
+      padding: 0;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+  }
+  @media (max-width: 768px) {
+    .secondary-navbar {
+        height: auto;
+    }
+    .nav-link, .nav-item{
+        font-size: 14px !important;
+        padding: 2px !important;
+        margin: 0px !important;
+    }
+    h1{
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+  .none-link{
+    text-decoration: none;
+    color: black;
+  }
+  .none-link:hover {
+    text-decoration: none;
+    color: #AE8B2F !important;
+  }
+  .more:hover{
+    transform: scale(1.5);
+  }
+  .more{
+    transition: transform 0.5s ease;
+  }
+  h1 {
+    text-align: center; /* Centrer le texte du titre */
+    padding: 2.25rem; /* Espacement interne pour l'en-tête */
+    background-color: #fff; /* Couleur de fond blanc pour l'en-tête */
+    margin-bottom: 2.25rem; /* Marge inférieure pour l'en-tête */
+    box-shadow: 0px 0.125rem 0.3125rem rgba(0, 0, 0, 0.1); /* Ombre pour l'en-tête */
+  }
+  /* style d'ajout de pen et bin au bouton */
+  .video-item {
+    display: flex;
+    flex-direction: column;
+  }
+  .category-icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .btn-custom {
+    flex-grow: 1;
+  }
+  /* style d'ajout de pen et bin au bouton ajouter par Ev */
+  .video-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .category-icons {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .no-underline-link, .no-underline-link:hover, .no-underline-link:active, .no-underline-link:visited {
+        text-decoration: none !important;
+        color: black;
+    }
+
+  /* pour fenetre delete */
+  .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  .modal-content {
+      background-color: #fff;
+      margin: 20% auto;
+      padding: 20px;
+      border-radius: 5px;
+      width: 60%;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      text-align: center;
+  }
+
+  .modal-buttons button {
+      margin: 10px;
+      padding: 5px 10px;
+      background-color: #AE8B2F;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+  }
+
+  .modal-buttons button:hover {
+      background-color:  #FFC400;
+  }
+  .more {
+      width: 20px;
+      height: 20px;
+      margin: 5pt;
+      size: 1vw;
+    }
+
+    .bin{
+      width: 20px !important;
+      height: 20px !important;
+      margin: 5pt !important;
+      vertical-align: middle!important;
+      transition: transform 0.3s ease;
+    }
+    .pen:hover, .bin:hover {
+      transform: scale(1.5);
+    }
+    .icons{
+      display:flex;
+
+      align-items: center;
+
+    }
+
+    /* ------- video command ---------- */
+    form{
+      width: 100%;
+    }

@@ -1,0 +1,124 @@
+/* Styles généraux pour les articles de blog */
+.article-item-blog {
+    max-width: 80rem;
+    background-color: #fff;
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    padding: 2rem;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 2rem;
+    font-size: 1.2rem; /* Correspond à .video-item */
+}
+
+.article-item-blog img {
+    width: 100%;
+    object-fit: contain;
+    height: 400px; /* Correspond à .video-wrapper */
+}
+
+.container-articles-blog {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.25rem; /* Correspond à .container-videos */
+    padding: 2rem;
+    padding-left: 3rem; /* Correspond à .main-container */
+    padding-right: 3rem; /* Correspond à .main-container */
+}
+
+/* Styles pour les titres et sous-titres */
+.title-blog {
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0px 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
+    margin-bottom: 2.25rem;
+    padding: 2.25rem;
+    font-size: 3rem; /* Correspond à .text-center */
+    margin-top: 100px;
+}
+
+/* Médias requêtes pour l'adaptabilité, correspondant à .container-videos et .text-center */
+@media (max-width: 668px) {
+    .title-blog h1 {
+        font-size: 1.5rem; /* Correspond à .text-center */
+    }
+    /* Adaptations similaires pour d'autres éléments */
+}
+
+/* Styles pour les liens, correspondant à .video-item */
+.article-item-blog a {
+    display: block;
+    text-align: center;
+    background-color: #AE8B2F;
+    color: #fff;
+    padding: 0.6rem;
+    text-decoration: none;
+    border-radius: 0.3125rem; 
+    margin-top: -1rem; /* Correspond à .video-item a */
+}
+
+.article-item-blog a:hover {
+    background-color: #FFC400; /* Correspond à .video-item a:hover */
+}
+
+/* Amélioration des styles pour les appareils mobiles */
+@media (max-width: 668px) {
+    .title-blog h1 {
+        font-size: 2rem; /* Taille appropriée pour les appareils mobiles */
+    }
+
+    .title-blog h3 {
+        font-size: 1.5rem; /* Taille appropriée pour les sous-titres sur les appareils mobiles */
+    }
+
+    .article-item-blog {
+        padding: 1rem; /* Marges plus étroites pour les appareils mobiles */
+        margin-bottom: 1rem;
+    }
+
+    .article-item-blog img {
+        height: auto; /* Hauteur adaptable pour les images */
+    }
+
+    .container-articles-blog {
+        padding-left: 1rem; /* Marge gauche réduite pour les appareils mobiles */
+        padding-right: 1rem; /* Marge droite réduite pour les appareils mobiles */
+    }
+}
+
+/* Styles pour les tablettes et petits écrans */
+@media (max-width: 768px) {
+    .container-articles-blog {
+        grid-template-columns: 1fr; /* Une colonne pour une meilleure visualisation sur les tablettes */
+    }
+}
+
+/* Styles pour les grands écrans, similaires à .container-videos */
+@media (min-width: 1500px) {
+    .container-articles-blog {
+        grid-template-columns: repeat(3, 1fr); /* Trois colonnes pour les grands écrans */
+    }
+}
+
+/* Styles pour les boutons et liens, similaires à .video-item */
+.article-item-blog a {
+    display: block;
+    text-align: center;
+    background-color: #AE8B2F;
+    color: #fff;
+    padding: 0.6rem;
+    text-decoration: none;
+    border-radius: 0.3125rem;
+    margin-top: 1rem;
+}
+
+.article-item-blog a:hover {
+    background-color: #FFC400;
+}
+
+/* Styles pour les titres d'articles de blog */
+.article-item-blog h4 {
+    margin: 0.5rem 0; /* Marges appropriées pour les titres */
+    font-size: 1.5rem; /* Taille de police correspondant à .video-item h2 */
+    color: #333; /* Couleur des titres */
+}
