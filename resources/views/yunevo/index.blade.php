@@ -3,14 +3,14 @@
 
 @section('head')
 
-    <link rel="stylesheet" href="{{ asset('css/index.css') }}">
+    <link rel="stylesheet" href="{{secure_asset('css/index.css') }}">
 @endsection
 
 @section('content')
     <div class="main-index">
         <main class="content">
             <section class="intro-image">
-                <img src="{{ asset('images/running.png') }}" alt="">
+                <img src="{{ secure_asset('images/running.png') }}" alt="">
                 <div class="text-part">
                     <h2>Bienvenue sur <br> <span class="larger-text">YunEvО SPORT</span> <br>Transformez votre vie, avec une
                         guidance professionnelle à chaque étape.</h2>
@@ -39,28 +39,28 @@
                     <div class="advantage-column">
                         <!-- Accessibilité -->
                         <div class="advantage-item">
-                            <h3><img class="advantage-icon" src="{{ asset('images/planet.png') }}"
+                            <h3><img class="advantage-icon" src="{{ secure_asset('images/planet.png') }}"
                                     alt="Icône Accessibilité">Accessibilité</h3>
                             <p>Entraînez–vous de n’importe quel endroit du monde, en économisant du temps sur le trajet.</p>
                         </div>
-                        <img class="advantage-image" src="{{ asset('images/man.jpg') }}" alt="Image Accessibilité">
+                        <img class="advantage-image" src="{{secure_asset('images/man.jpg') }}" alt="Image Accessibilité">
                         <!-- Horaire Flexible -->
                         <div class="advantage-item">
-                            <h3><img class="advantage-icon" src="{{ asset('images/clock.png') }}"
+                            <h3><img class="advantage-icon" src="{{secure_asset('images/clock.png') }}"
                                     alt="Icône Horaire Flexible">Horaire flexible</h3>
                             <p>Des entraînements à l'heure qui vous convient.</p>
                         </div>
                     </div>
                     <!-- Deuxième Colonne -->
                     <div class="advantage-column  column-section">
-                        <img class="advantage-image" src="{{ asset('images/fit.jpg') }}" alt="Image Choix Variés">
+                        <img class="advantage-image" src="{{secure_asset('images/fit.jpg') }}" alt="Image Choix Variés">
                         <!-- Choix Variés -->
                         <div class="advantage-item">
-                            <h3>Choix variés <img class="advantage-icon" src="{{ asset('images/choice.png') }}"
+                            <h3>Choix variés <img class="advantage-icon" src="{{secure_asset('images/choice.png') }}"
                                     alt="Icône Choix Variés"></h3>
                             <p>Choisissez votre entraîneur préféré sur YunEvo SPORT et l'entraînement qui vous convient.</p>
                         </div>
-                        <img class="advantage-image" src="{{ asset('images/yoga.jpg') }}" alt="Image Horaire Flexible">
+                        <img class="advantage-image" src="{{ secure_asset('images/yoga.jpg') }}" alt="Image Horaire Flexible">
                     </div>
                 </div>
             </section>
@@ -76,7 +76,7 @@
                             <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
                                 <div class="review-container">
                                     <div class="review-left">
-                                        <img src="{{ asset($review['img']) }}" alt="{{ $review['name'] }}"
+                                        <img src="{{ secure_asset($review['img']) }}" alt="{{ $review['name'] }}"
                                             class="carousel-review-image">
                                         <span>{{ $review['name'] }}</span>
                                     </div>
@@ -115,7 +115,7 @@
                             @endif
                         </div>
                     </div>
-                    <img src="{{ asset('images/fitness.jpg') }}" alt="Entraîneur de Fitness">
+                    <img src="{{ secure_asset('images/fitness.jpg') }}" alt="Entraîneur de Fitness">
                 </div>
             </section>
         </main>

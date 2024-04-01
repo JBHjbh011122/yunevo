@@ -2,9 +2,9 @@
 @section('title', 'Form_blog_ajoute')
 
 @section('head')
-    <link rel="stylesheet" href="{{ asset('css/form.css') }}">
-    <script src="{{ asset('js/index.js') }}"></script>
-    <script src="{{ asset('js/prevent-multiple-submissions.js') }}" defer></script>
+    <link rel="stylesheet" href="{{secure_asset('css/form.css') }}">
+    <script src="{{secure_asset('js/index.js') }}"></script>
+    <script src="{{ secure_asset('js/prevent-multiple-submissions.js') }}" defer></script>
 @endsection
 
 @section('content')
@@ -37,7 +37,7 @@
                                             <label for="photo_profil" class="photo-profil-link">
                                                 <input type="file" class="form-control d-none" id="photo_profil"
                                                     name="photo_profil" onchange="updateFileName()">
-                                                <img src="{{ asset('/images/image.png') }}" alt="photo profil"
+                                                <img src="{{secure_asset('/images/image.png') }}" alt="photo profil"
                                                     width="30" height="30">
                                             </label>
                                         </div>

@@ -11,7 +11,7 @@ $unreadMessagesCount = \App\Models\Message::where('destinataire_id', Auth::id())
             <a class="nav-link" href="{{ route('boite-reception.recus') }}">
                 Messages
                 @if ($unreadMessagesCount > 0)
-                <img src="{{ asset('images/icon-notification.png') }}" alt="Unread Messages" class="notification-icon">
+                <img src="{{ secure_asset('images/icon-notification.png') }}" alt="Unread Messages" class="notification-icon">
                 @endif
             </a>
         </li>

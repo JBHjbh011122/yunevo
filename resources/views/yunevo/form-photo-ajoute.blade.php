@@ -2,7 +2,7 @@
 @section('title', 'Form_avis_ajout')
 
 @section('head')
-    <link rel="stylesheet" href="{{ asset('css/form.css') }}">
+    <link rel="stylesheet" href="{{secure_asset('css/form.css') }}">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.js"></script>
@@ -35,7 +35,7 @@
                                                 <input type="file" class="form-control d-none" id="photo_profil"
                                                     name="photo_profil" onchange="updateFileName()">
                                                 <span id="file-name"></span>
-                                                <img src="{{ asset('/images/image.png') }}" alt="photo profil"
+                                                <img src="{{secure_asset('/images/image.png') }}" alt="photo profil"
                                                     width="30" height="30">
                                             </label>
                                         </div>

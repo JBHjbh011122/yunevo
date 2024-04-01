@@ -2,7 +2,7 @@
 @section('title', 'Vidéos privées entraineur')
 
 @section('head')
-    <link rel="stylesheet" href="{{ asset('css/compte-entraineur.css') }}">
+    <link rel="stylesheet" href="{{secure_asset('css/compte-entraineur.css') }}">
 @endsection
 
 @section('content')
@@ -15,7 +15,7 @@
                 <div class="video-item">
                     <div class="video-wrapper">
                         <video controls>
-                            <source src="{{ asset($video->lien_aws) }}" type="video/mp4">
+                            <source src="{{secure_asset($video->lien_aws) }}" type="video/mp4">
                             Votre navigateur ne supporte pas la vidéo.
                         </video>
                     </div>
@@ -34,7 +34,7 @@
                 <div class="no-videos-message ">
                     <h3>Vous n'avez pas encore de video. </h3>
                     <p>Ajouter votre première vidéo privée!<a href="{{ url('/form-video-ajoute') }}">
-                        <img src="{{ asset('images/more.png') }}" alt="" class="more"></a>
+                        <img src="{{ secure_asset('images/more.png') }}" alt="" class="more"></a>
                     </p>
                 </div>
             @endforelse

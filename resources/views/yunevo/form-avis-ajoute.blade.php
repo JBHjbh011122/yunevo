@@ -2,7 +2,7 @@
 @section('title', 'Form_avis_ajout')
 
 @section('head')
-    <link rel="stylesheet" href="{{ asset('css/form.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/form.css') }}">
 @endsection
 
 @section('content')
@@ -30,8 +30,8 @@
                             <h5 class="card-title">Évaluez l'application</h5>
                             <div class="star-rating">
                                 @for ($i = 1; $i <= 5; $i++)
-                                    <img class="ajoute-avis" src="{{ asset('images/star.png') }}"
-                                        data-active="{{ asset('images/star-filled.png') }}"
+                                    <img class="ajoute-avis" src="{{ secure_asset('images/star.png') }}"
+                                        data-active="{{secure_asset('images/star-filled.png') }}"
                                         data-rating="{{ $i }}" alt="Star {{ $i }}" width="30"
                                         height="30" onclick="handleStarClick(this)">
                                 @endfor

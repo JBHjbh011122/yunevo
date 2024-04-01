@@ -2,8 +2,8 @@
 @section('title', 'Nos entraîneurs')
 
 @section('head')
-    <link rel="stylesheet" href="{{ asset('css/form.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/nos-entraineur.css') }}">
+    <link rel="stylesheet" href="{{secure_asset('css/form.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/nos-entraineur.css') }}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 @endsection
 

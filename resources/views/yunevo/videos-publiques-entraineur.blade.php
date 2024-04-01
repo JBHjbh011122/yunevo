@@ -2,7 +2,7 @@
 @section('title', 'Vidéos publiques entraineur')
 
 @section('head')
-    <link rel="stylesheet" href="{{ asset('css/compte-entraineur.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/compte-entraineur.css') }}">
 @endsection
 
 @section('content')
@@ -32,7 +32,7 @@
                 <div class="video-item">
                     <div class="video-wrapper">
                         <video controls>
-                            <source src="{{ asset($video->lien_aws) }}" type="video/mp4">
+                            <source src="{{secure_asset($video->lien_aws) }}" type="video/mp4">
                             Votre navigateur ne supporte pas la vidéo.
                         </video>
                     </div>
@@ -44,10 +44,10 @@
                         <div class="icons">
                             <a href="{{ route('modifie-video', ['video_id' => $video->id]) }}" class="pen"
                                 title="Modifier la video">
-                                <img src="{{ asset('images/pen.png') }}" alt="" class="pen">
+                                <img src="{{ secure_asset('images/pen.png') }}" alt="" class="pen">
                             </a>
                             <a class="bin" href="#" onclick="openDeleteConfirmation('{{ $video->id }}')">
-                                <img src="{{ asset('images/bin.png') }}" alt="" class="bin"
+                                <img src="{{secure_asset('images/bin.png') }}" alt="" class="bin"
                                     title="Supprimer la video">
                             </a>
                         </div>

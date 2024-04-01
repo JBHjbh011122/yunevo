@@ -2,8 +2,8 @@
 @section('title', 'Les entraîneurs par catégorie')
 
 @section('head')
-    <link rel="stylesheet" href="{{ asset('css/form.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/nos-entraineur.css') }}">
+    <link rel="stylesheet" href="{{secure_asset('css/form.css') }}">
+    <link rel="stylesheet" href="{{secure_asset('css/nos-entraineur.css') }}">
 @endsection
 
 @section('content')
@@ -11,7 +11,7 @@
         <div class="title bg-typ">
             <h1 class="text-center titre-public">Les entraîneurs - <span class="font-weight-bold font-italic">{{ $category?? 'Default Category' }}</span></h1>
         </div>
-        
+
         <div class="container mt-5 liste-entraineur">
 
             <a href="{{ url('nos-entraineurs') }}" class="btn btn-light mb-4 font-weight-bold">&larr; Revenir</a>

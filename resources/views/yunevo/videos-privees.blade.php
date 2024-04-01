@@ -7,7 +7,7 @@
 @endphp
 
 @section('head')
-    <link rel="stylesheet" href="{{ asset('css/videos-publiques.css') }}">
+    <link rel="stylesheet" href="{{secure_asset('css/videos-publiques.css') }}">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 @endsection
 
@@ -35,8 +35,8 @@
             <h3 id="{{ Str::slug($category) }}" class="text-center titre-public mt-0 bg-typ">
                 Catégorie d'entraîneur :
                 <span class="font-weight-bold font-italic display-6">{{ $category }}</span>
-            </h3>        
-            <div class="container-videos mt-4">           
+            </h3>
+            <div class="container-videos mt-4">
                 @foreach ($videos as $video)
                     <div class="video-item">
                         <div class="video-wrapper">
@@ -58,7 +58,7 @@
                         @endif
 
                         <h6 class="font-weight-bold video-info">
-                            <img src="{{ asset('images/athletics.png') }}" class="logo" style="height: 25px; width: 25px;">
+                            <img src="{{secure_asset('images/athletics.png') }}" class="logo" style="height: 25px; width: 25px;">
                             {{ $category }}
                         </h6>
 
@@ -66,7 +66,7 @@
                         <p class="text-break ">{{ Str::limit($video->description, 70) }}</p>
                         <a href="{{ route('detail-video', ['video_id' => $video->id]) }}" title="Lire la suite">Lire la suite</a>
                     </div>
-                @endforeach           
+                @endforeach
             </div>
         @endforeach
     </div>
@@ -76,7 +76,7 @@
             $('.scroll-to-category').on('click', function(e) {
                 e.preventDefault();
                 var category = $(this).data('category');
-                var offset = $('#' + category).offset().top;              
+                var offset = $('#' + category).offset().top;
                 $('html, body').animate({
                     scrollTop: offset - 100
                 }, 1000);

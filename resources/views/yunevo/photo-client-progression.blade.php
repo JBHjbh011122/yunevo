@@ -2,8 +2,8 @@
 @section('title', 'Photo progression du client')
 
 @section('head')
-    <link rel="stylesheet" href="{{ asset('css/blog-entraineur.css') }}">
-    <script src="{{ asset('js/index.js') }}"></script>
+    <link rel="stylesheet" href="{{ secure_asset('css/blog-entraineur.css') }}">
+    <script src="{{secure_asset('js/index.js') }}"></script>
 @endsection
 
 @section('content')
@@ -24,7 +24,7 @@
                         <div class="photo_icons">
                             <h4 class="date_photo">{{ \Carbon\Carbon::parse($photo->date_image)->format('Y-m-d') }}</h4>
                             <a class="bin_photo" href="#" onclick="openDeleteConfirmation('{{ $photo->id }}')">
-                                <img src="{{ asset('images/bin.png') }}" alt="" class="bin"
+                                <img src="{{ secure_asset('images/bin.png') }}" alt="" class="bin"
                                     title="Supprimer le photo">
                             </a>
                         </div>
@@ -48,7 +48,7 @@
                 @empty
                 <div class="no-blogs-message">
                     <p>Vous n'avez pas encore de photo. <a href="{{ url('/form-photo-ajoute') }}"><img
-                                src="{{ asset('images/more.png') }}" alt="" class="more">Ajouter votre premier
+                                src="{{ secure_asset('images/more.png') }}" alt="" class="more">Ajouter votre premier
                             photo!</a></p>
                 </div>
             @endforelse

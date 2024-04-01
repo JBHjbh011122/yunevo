@@ -3,8 +3,8 @@
  @section('title', 'Videos Publiques Par Categorie')
 
  @section('head')
-     <link rel="stylesheet" href="{{ asset('css/videos-publiques.css') }}">
-     <link rel="stylesheet" href="{{ asset('css/form.css') }}">
+     <link rel="stylesheet" href="{{secure_asset('css/videos-publiques.css') }}">
+     <link rel="stylesheet" href="{{ secure_asset('css/form.css') }}">
  @endsection
 
  @section('content')
@@ -39,7 +39,7 @@
 
                          @if ($video->entraineur && $video->entraineur->user)
                              <h5 class="font-weight-bold video-info">
-                                 <img src="{{ $video->entraineur->user->lien_aws_photo_compte ?? asset('images/profil.jpeg') }}"
+                                 <img src="{{ $video->entraineur->user->lien_aws_photo_compte ?? secure_asset('images/profil.jpeg') }}"
                                      alt="Avatar Entraineur" title="Profil"
                                      style="height: 30px; width: 30px; border-radius: 50%;">
                                  {{ $video->entraineur->user->prenom }} {{ $video->entraineur->user->nom }}
@@ -48,7 +48,7 @@
                              <p>Entraîneur non disponible</p>
                          @endif
                          <h6 class="font-weight-bold video-info">
-                             <img src="{{ asset('images/athletics.png') }}" class="logo"
+                             <img src="{{secure_asset('images/athletics.png') }}" class="logo"
                                  style="height: 25px; width: 25px;">
                              {{ $video->entraineur->categories_d_entraineur }}
                          </h6>

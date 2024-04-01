@@ -2,7 +2,7 @@
 @section('title', 'Form-client-compte-modifie')
 
 @section('head')
-    <link rel="stylesheet" href="{{ asset('css/form.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/form.css') }}">
 @endsection
 
 @section('content')
@@ -66,7 +66,7 @@
                                                     name="photo_profil" onchange="updateFileName()">
                                                 <span id="file-name"></span>
 
-                                                <img src="{{ asset('/images/image.png') }}" alt="photo profil"
+                                                <img src="{{secure_asset('/images/image.png') }}" alt="photo profil"
                                                     width="30" height="30">
                                             </label>
                                         </div>

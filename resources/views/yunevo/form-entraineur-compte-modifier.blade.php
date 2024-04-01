@@ -2,7 +2,7 @@
 @section('title', 'Form-entraineur-compte-modifier')
 
 @section('head')
-    <link rel="stylesheet" href="{{ asset('css/form.css') }}">
+    <link rel="stylesheet" href="{{secure_asset('css/form.css') }}">
 @endsection
 
 @section('content')
@@ -49,7 +49,7 @@
                                                     name="photo_profil" onchange="updateFileName()">
                                                 <span id="file-name"></span>
 
-                                                <img src="{{ asset('/images/image.png') }}" alt="photo profil"
+                                                <img src="{{ secure_asset('/images/image.png') }}" alt="photo profil"
                                                     width="30" height="30">
                                             </label>
                                         </div>
@@ -62,7 +62,7 @@
                                     <div class="category d-flex align-items-center position-relative">
                                         <div class="form-check form-check-inline">
                                             <a href="#" id="category-dropdown-toggle" class="category-link">
-                                                <img src="{{ asset('/images/down-arrow.png') }}" alt="category"
+                                                <img src="{{secure_asset('/images/down-arrow.png') }}" alt="category"
                                                     width="30" height="30">
                                             </a>
                                         </div>

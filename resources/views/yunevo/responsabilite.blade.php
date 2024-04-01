@@ -3,7 +3,7 @@
 @section('title', 'responsabilite')
 
 @section('head')
-    <link rel="stylesheet" href="{{ asset('css/responsabilite.css') }}">
+    <link rel="stylesheet" href="{{secure_asset('css/responsabilite.css') }}">
 @endsection
 
 @section('content')

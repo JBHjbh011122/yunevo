@@ -4,7 +4,7 @@
 
 @section('head')
     <!-- Include specific styles for the video-detail page -->
-    <link rel="stylesheet" href="{{ asset('css/detail-video.css') }}">
+    <link rel="stylesheet" href="{{secure_asset('css/detail-video.css') }}">
     <style>
         .video-header {
             display: flex;
@@ -39,7 +39,7 @@
             <div class="col-lg-12 text-center">
                 <!-- Video player -->
                 <video controls class="img-fluid mb-2 image-border image-hover-effect video-player">
-                    <source src="{{ asset($selected_video->lien_aws) }}" type="video/mp4">
+                    <source src="{{ secure_asset($selected_video->lien_aws) }}" type="video/mp4">
                     Votre navigateur ne supporte pas la vidéo.
                 </video>
             </div>
@@ -53,10 +53,10 @@
                         <div class="icons">
                             <a href="{{ route('modifie-video', ['video_id' => $selected_video->id]) }}" class="pen"
                                 title="Modifier la video">
-                                <img src="{{ asset('images/pen.png') }}" alt="" class="pen">
+                                <img src="{{secure_asset('images/pen.png') }}" alt="" class="pen">
                             </a>
                             <a class="bin" href="#" onclick="openDeleteConfirmation('{{ $selected_video->id }}')">
-                                <img src="{{ asset('images/bin.png') }}" alt="" class="bin"
+                                <img src="{{secure_asset('images/bin.png') }}" alt="" class="bin"
                                     title="Supprimer la video">
                             </a>
                         </div>
@@ -70,7 +70,7 @@
                         {{ $selected_video->entraineur->user->nom }} {{ $selected_video->entraineur->user->prenom }}
                     </h6>
                     <h6 class="font-weight-bold font-italic">
-                        <img src="{{ asset('images/athletics.png') }}" class="logo" style="height: 25px; width: 25px;">
+                        <img src="{{secure_asset('images/athletics.png') }}" class="logo" style="height: 25px; width: 25px;">
                         {{ $trainerTrainingType }}
                     </h6>
                 @endif

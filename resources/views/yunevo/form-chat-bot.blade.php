@@ -2,7 +2,7 @@
 @section('title', 'Form_chat_bot')
 
 @section('head')
-    <link rel="stylesheet" href="{{ asset('css/form.css') }}">
+    <link rel="stylesheet" href="{{secure_asset('css/form.css') }}">
 @endsection
 
 @section('content')
@@ -17,7 +17,7 @@
                             <button class="close-btn">×</button>
                         </div>
                         <div class="photo-chat-header">
-                            <img class="photo-chat" src="{{ asset('images/chat.png') }}" alt="photo chat" width="15"
+                            <img class="photo-chat" src="{{secure_asset('images/chat.png') }}" alt="photo chat" width="15"
                                 height="15">
                             <p class="chat-reponse">Nous vous répondrons dès que possible.</p>
                         </div>
@@ -44,7 +44,7 @@
             if (event.key === 'Enter') {
                 event.preventDefault();
                 const message = chatInput.value.trim();
-                chatInput.value = ''; 
+                chatInput.value = '';
 
                 if (message) {
                     chatWindow.innerHTML += `<div class="user-message">${message}</div>`;

@@ -2,7 +2,7 @@
 @section('title', 'Compte client')
 
 @section('head')
-    <link rel="stylesheet" href="{{ asset('css/compte-client.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/compte-client.css') }}">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 @endsection
 
@@ -63,7 +63,7 @@
                                 </a>
                             </span>
                             <a class="more" href="{{ url('/form-photo-ajoute') }}"><img
-                                    src="{{ asset('images/more.png') }}" class="more"></a>
+                                    src="{{secure_asset('images/more.png') }}" class="more"></a>
                         </h3><br>
 
                         <div class="container-client-progression">
@@ -87,7 +87,7 @@
                         <h3 class="compte-client">
                             <span>Grafique de l'évoluation du poids</span>
                             <a class="more" href="{{ url('/form-poids-ajoute') }}"><img
-                                    src="{{ asset('images/more.png') }}" class="more"></a>
+                                    src="{{ secure_asset('images/more.png') }}" class="more"></a>
                         </h3>
                         <div class="">
                             <div class="container-articles-grafique">

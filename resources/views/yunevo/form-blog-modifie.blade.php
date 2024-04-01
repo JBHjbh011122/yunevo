@@ -2,8 +2,8 @@
 @section('title', 'Form_blog_modifie')
 
 @section('head')
-    <link rel="stylesheet" href="{{ asset('css/form.css') }}">
-    <script src="{{ asset('js/index.js') }}"></script>
+    <link rel="stylesheet" href="{{secure_asset('css/form.css') }}">
+    <script src="{{secure_asset('js/index.js') }}"></script>
 @endsection
 
 @section('content')
@@ -45,7 +45,7 @@
                                                     name="photo_profil" onchange="updateFileName()">
                                                 <span id="file-name"></span>
 
-                                                <img src="{{ asset('/images/image.png') }}" alt="photo profil"
+                                                <img src="{{secure_asset('/images/image.png') }}" alt="photo profil"
                                                     width="30" height="30">
                                             </label>
                                         </div>

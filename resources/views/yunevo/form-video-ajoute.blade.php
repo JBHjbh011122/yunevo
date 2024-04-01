@@ -2,7 +2,7 @@
 @section('title', 'Form_video_ajoute')
 
 @section('head')
-    <link rel="stylesheet" href="{{ asset('css/form.css') }}">
+    <link rel="stylesheet" href="{{secure_asset('css/form.css') }}">
 @endsection
 
 @section('content')
@@ -36,7 +36,7 @@
                                             <label for="video-file" class="photo-profil-link">
                                                 <input type="file" class="form-control d-none" id="video-file"
                                                     name="video-file" onchange="onFileSelected(event)">
-                                                <img src="{{ asset('/images/image.png') }}" alt="photo profil"
+                                                <img src="{{ secure_asset('/images/image.png') }}" alt="photo profil"
                                                     width="30" height="30">
                                             </label>
                                         </div>

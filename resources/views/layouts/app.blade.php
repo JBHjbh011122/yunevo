@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/chat.css') }}">
-    <script defer src="{{ asset('js/index.js') }}"></script>
+    <link rel="stylesheet" href="{{ secure_asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/chat.css') }}">
+    <script defer src="{{ secure_asset('js/index.js') }}"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <link href="https://fonts.cdnfonts.com/css/font" rel="stylesheet">
@@ -27,24 +27,24 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{secure_asset('css/style.css')}}">
     <!-- JavaScript  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/i18n/fr.js"></script>
 
-<!-- connexion jQuery -->
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- connexion jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
-<!-- Connexion Bootstrap JS -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <!-- Connexion Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 
-<!-- Connexion de Popper.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <!-- Connexion de Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 
-<!-- Connexion Bootstrap JS -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Connexion Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <title>@yield('title')</title>
     @yield('head')
@@ -64,7 +64,7 @@
     </div>
 
     <div id="chat-icon" style="position: fixed; bottom: 40px; right: 20px; cursor: pointer;">
-        <img src="{{ asset('images/chat-icon.png') }}" alt="Chat Icon" width="50" height="50">
+        <img src="{{ secure_asset('images/chat-icon.png') }}" alt="Chat Icon" width="50" height="50">
     </div>
 
     <div id="chat-window" style="display: none;z-index: 1000;">
@@ -74,7 +74,7 @@
                 <p class="chat-title">YunEvo SPORT</p>
             </div>
             <div class="photo-chat-header">
-                <img class="photo-chat" src="{{ asset('images/chat.png') }}" alt="photo chat" width="15"
+                <img class="photo-chat" src="{{ secure_asset('images/chat.png') }}" alt="photo chat" width="15"
                     height="15">
                 <p class="chat-reponse">Nous vous répondrons dès que possible.</p>
             </div>

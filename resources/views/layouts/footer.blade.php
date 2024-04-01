@@ -30,7 +30,7 @@
             <div class="col-auto">
                 <a href="{{ url('responsabilite') }}" target="_blank" class="responsabilite-link">
                     <div class="footer-item">
-                        <img src="{{ asset('images/icon-information.png') }}" alt="footer-icon" width="30" height="30">
+                        <img src="{{ secure_asset('images/icon-information.png') }}" alt="footer-icon" width="30" height="30">
                         <!-- Icône de responsabilité (peut être une icône d'information) -->
                     </div>
                     <div class="footer-item">

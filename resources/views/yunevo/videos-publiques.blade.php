@@ -3,7 +3,7 @@
 @section('title', 'videos-publiques')
 
 @section('head')
-    <link rel="stylesheet" href="{{ asset('css/videos-publiques.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/videos-publiques.css') }}">
 @endsection
 
 @section('content')
@@ -42,7 +42,7 @@
                         <p>Entraîneur non disponible</p>
                     @endif
                     <h6 class="font-weight-bold video-info">
-                        <img src="{{ asset('images/athletics.png') }}" class="logo" style="height: 25px; width: 25px;">
+                        <img src="{{ secure_asset('images/athletics.png') }}" class="logo" style="height: 25px; width: 25px;">
                         {{ $video->entraineur->categories_d_entraineur }}
                     </h6>
                     <h6 class="font-weight-bold font-italic video-info">{{ $video->titre }}</h6>

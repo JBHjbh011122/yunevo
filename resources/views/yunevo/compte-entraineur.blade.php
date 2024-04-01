@@ -2,7 +2,7 @@
 @section('title', 'Compte d\'entraineur')
 
 @section('head')
-    <link rel="stylesheet" href="{{ asset('css/compte-entraineur.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/compte-entraineur.css') }}">
 
 @endsection
 
@@ -54,7 +54,7 @@
                                 </a>
                             </span>
                             <a class="" href="{{ route('video-ajoute', ['type' => 'publique']) }}">
-                                <img src="{{ asset('images/more.png') }}" alt="" class="more"></a>
+                                <img src="{{secure_asset('images/more.png') }}" alt="" class="more"></a>
                         </h3>
                         <div class="container-videos">
                             @foreach ($videosPublic as $video)
@@ -79,7 +79,7 @@
                                     Videos privees
                                 </a></span>
                                 <a class="" href="{{ route('video-ajoute', ['type' => 'privee']) }}">
-                                    <img src="{{ asset('images/more.png') }}" alt="" class="more"></a>
+                                    <img src="{{ secure_asset('images/more.png') }}" alt="" class="more"></a>
                         </h3>
                         <div class="container-videos">
                             @foreach ($videosPrivee as $video)
@@ -97,14 +97,14 @@
                             @endforeach
                         </div>
                     </div>
-                   
+
                     <div class="blog">
                         <h3 class="compte-entraineur">
                             <span><a class="none-link" href="{{ url('/blog-entraineur') }}">
                                     Blog
                                 </a></span>
                             <a class="" href="{{ url('/form-blog-ajoute') }}"><img
-                                    src="{{ asset('images/more.png') }}" alt="" class="more"
+                                    src="{{secure_asset('images/more.png') }}" alt="" class="more"
                                     title="Ajouter un nouveau blog"></a>
                         </h3>
                         <div class="container-blog">

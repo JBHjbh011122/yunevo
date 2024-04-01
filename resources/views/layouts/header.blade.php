@@ -1,6 +1,6 @@
 <header id="header">
     <nav class="navbar navbar-expand-xl navbar-light">
-        <a class="navbar-brand" href="{{ url('/') }}">YunEvO <img src="{{ asset('images/athletics.png') }}" class="logo"> SPORT</a>
+        <a class="navbar-brand" href="{{ url('/') }}">YunEvO <img src="{{secure_asset('images/athletics.png') }}" class="logo"> SPORT</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mobileNav" aria-controls="mobileNav" aria-expanded="false" aria-label="Toggle navigation" id="openNav">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -13,7 +13,7 @@
                     <a class="nav-link" href="{{ url('nos-entraineurs') }}">Entraîneurs</a>
                 </li>
                 <li class="nav-item {{ request()->is('allvideos-publiques') ? 'active' : '' }}">
-                    <a class="nav-link" href="{{ url('allvideos-publiques') }}">Vidéos publiques</a> 
+                    <a class="nav-link" href="{{ url('allvideos-publiques') }}">Vidéos publiques</a>
                 </li>
                 <li class="nav-item {{ request()->is('blog') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ url('blog') }}">Blog</a>
@@ -42,13 +42,13 @@
                             <!-- Lien vers le profil du client -->
                             <a class="nav-link" href="{{ url('/compte-client') }}">
                                 <!-- Image de l'avatar du client ou image par défaut si elle n'est pas définie -->
-                                <img src="{{ Auth::user()->lien_aws_photo_compte ?? asset('images/profil.jpeg') }}" alt="Avatar Client" title="Profil" style="height: 55px; width: 55px; border-radius: 50%;">
+                                <img src="{{ Auth::user()->lien_aws_photo_compte ??secure_asset('images/profil.jpeg') }}" alt="Avatar Client" title="Profil" style="height: 55px; width: 55px; border-radius: 50%;">
                             </a>
                         @elseif (Auth::user()->user_type === 'entraineur')
                             <!-- Lien vers la page de profil de l'entraineur -->
                             <a class="nav-link" href="{{ url('/compte-entraineur') }}">
                                 <!-- Image de l'avatar de l'entraineur ou image par défaut si elle n'est pas définie -->
-                                <img src="{{ Auth::user()->lien_aws_photo_compte ?? asset('images/profil.jpeg') }}" alt="Avatar Entraineur" title="Profil" style="height: 55px; width: 55px; border-radius: 50%;">
+                                <img src="{{ Auth::user()->lien_aws_photo_compte ?? secure_asset('images/profil.jpeg') }}" alt="Avatar Entraineur" title="Profil" style="height: 55px; width: 55px; border-radius: 50%;">
                             </a>
                         @endif
                     </li>

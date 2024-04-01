@@ -3,8 +3,8 @@
 @section('title', 'Detail de l\'article')
 
 @section('head')
-    <link rel="stylesheet" href="{{ asset('css/detail-article.css') }}">
-    <script src="{{ asset('js/index.js') }}"></script>
+    <link rel="stylesheet" href="{{secure_asset('css/detail-article.css') }}">
+    <script src="{{secure_asset('js/index.js') }}"></script>
 @endsection
 
 @section('content')
@@ -38,10 +38,10 @@
                 @if (Auth::user()->id == $blog->entraineur->entraineur_id && $isOwner)
                     <div class="icons">
                         <a href="{{ route('modifie-blog', ['blog' => $blog->id]) }}" class="pen" title="Modifier le blog">
-                            <img src="{{ asset('images/pen.png') }}" alt="" class="pen">
+                            <img src="{{secure_asset('images/pen.png') }}" alt="" class="pen">
                         </a>
                         <a class="bin" href="#" onclick="openDeleteConfirmation('{{ $blog->id }}')">
-                            <img src="{{ asset('images/bin.png') }}" alt="" class="bin" title="Supprimer le blog">
+                            <img src="{{secure_asset('images/bin.png') }}" alt="" class="bin" title="Supprimer le blog">
                         </a>
                     </div>
                 @endif
