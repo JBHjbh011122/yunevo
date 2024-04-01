@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Google\Auth\ApplicationDefaultCredentials;
 use Google\Auth\HttpHandler\HttpHandlerFactory;
+use Illuminate\Support\Facades\File;
 
 class DialogflowServiceProvider extends ServiceProvider
 {
@@ -27,7 +28,16 @@ class DialogflowServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $credentialsPath = storage_path('app/' . env('GOOGLE_APPLICATION_CREDENTIALS'));
-        putenv('GOOGLE_APPLICATION_CREDENTIALS=' . $credentialsPath);
+        // 从环境变量读取JSON字符串
+        $googleCredentialsJson = env('GOOGLE_APPLICATION_CREDENTIALS');
+
+        // 创建临时文件并写入JSON字符串
+        if ($googleCredentialsJson) {
+            $tempFilePath = tempnam(sys_get_temp_dir(), 'gcp_');
+            File::put($tempFilePath, $googleCredentialsJson);
+
+            // 更新环境变量指向临时文件
+            putenv('GOOGLE_APPLICATION_CREDENTIALS=' . $tempFilePath);
+        }
     }
 }
