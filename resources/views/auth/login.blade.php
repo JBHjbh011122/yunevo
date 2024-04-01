@@ -53,7 +53,10 @@
                             <div class="text-center">
                                 <p class="text-pas-incrit">Vous n'êtes pas encore inscrit ?</p>
                                 <p class="text-pas-incrit">Inscrivez-vous comme :</p>
-                               yao 
+                                <div class="btn-group">
+                                    <a href="{{ route('register', ['user_type' => 'client']) }}" class="btn btn-primary btn-custom">Client</a>
+                                    <a href="{{ route('register', ['user_type' => 'entraineur']) }}" class="btn btn-primary btn-custom">Entraîneur</a>
+                                </div>
                             </div>
                         </form>
                     </div>
