@@ -62,7 +62,7 @@ Route::get('/modifier-video/{video_id}', [VideoController::class, 'showUpdateFor
 Route::get('/videos-publiques-par-categorie/{category}', [VideoController::class, 'showPublicVideosByCategory'])->name('videos-par-categorie');
 Route::get('/videos-publiques-entraineur', [VideoController::class, 'showPublicVideos'])->name('voir-public-video');
 Route::get('/videos-privees-entraineur', [VideoController::class, 'showPrivateVideos'])->name('voir-privees-video');
-Route::get('/allvideos-publiques', [VideoController::class, 'showAllPublicVideos'])->name('videos-publiques');
+Route::get('/allvideos-publiques', [VideoController::class, 'showAllPublicVideos'])->name('allvideos-publiques');
 Route::get('/detail-video/{video_id}', [VideoController::class, 'show'])->name('detail-video');
 
 //  ========== Blog ==================================
