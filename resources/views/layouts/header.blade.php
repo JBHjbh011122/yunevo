@@ -68,8 +68,8 @@
             <li class="nav-item {{ request()->is('nos-entraineurs') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ url('nos-entraineurs') }}">Entraîneurs</a>
             </li>
-            <li class="nav-item {{ request()->is('allvideos-publiques') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ url('allvideos-publiques') }}">Vidéos publiques</a>
+            <li class="nav-item {{ request()->is('videos-publiques') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ url('videos-publiques') }}">Vidéos publiques</a>
             </li>
             <li class="nav-item {{ request()->is('blog') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ url('blog') }}">Blog</a>
