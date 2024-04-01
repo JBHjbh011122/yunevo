@@ -2,7 +2,7 @@
 @section('title', 'Login')
 
 @section('head')
-    <link rel="stylesheet" href="{{ asset('css/form.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/form.css') }}">
 @endsection
 
 @section('content')
@@ -53,10 +53,7 @@
                             <div class="text-center">
                                 <p class="text-pas-incrit">Vous n'êtes pas encore inscrit ?</p>
                                 <p class="text-pas-incrit">Inscrivez-vous comme :</p>
-                                <div class="btn-group">
-                                    <a href="{{ route('register', ['user_type' => 'client']) }}" class="btn btn-primary btn-custom">Client</a>
-                                    <a href="{{ route('register', ['user_type' => 'entraineur']) }}" class="btn btn-primary btn-custom">Entraîneur</a>
-                                </div>
+                               yao 
                             </div>
                         </form>
                     </div>

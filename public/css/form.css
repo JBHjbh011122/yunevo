@@ -570,22 +570,31 @@ textarea:focus + .form-description-au::before {
 }
 
 @media (max-width: 768px) {
-     .btn-group {
-         flex-direction: column; /* Empiler les boutons verticalement sur les petits écrans */
-         align-items: center;
-     }
-     .btn-group .btn {
-         margin-bottom: 10px; /* Espace entre les boutons */
-     }
-     #inscrire-entraineur{
-         margin-left: 26px;
-     }
-     /* Supprimer la marge en bas du dernier bouton */
-     .btn-group .btn:last-child {
-         margin-bottom: 0;
-     }
-
- }
+    .btn-group {
+        flex-direction: column; /* Empiler les boutons verticalement sur les petits écrans */
+        align-items: center;
+    }
+    .btn-group .btn {
+        margin-bottom: 10px; /* Espace entre les boutons */
+        margin-left:0px;
+    }
+    #inscrire-entraineur{
+        margin-left: 26px;
+    }
+    /* Supprimer la marge en bas du dernier bouton */
+    .btn-group .btn:last-child {
+        margin-bottom: 0;
+    }
+    .btn-group{
+       display: flex;
+       justify-content: center;
+       flex-wrap: wrap;
+    }
+    .btn-custom {
+       margin: 0 auto;
+       padding: 7px 0px;
+   }
+}
 
  @media (max-width: 600px) {
      .form-connect,.form-blog,.form-client,.form-inscrire,.form-avis,.form-entraineur,.form-video {
@@ -604,4 +613,4 @@ textarea:focus + .form-description-au::before {
      .entraineur-title{font-size: 30px;}
  }
 
- 
+

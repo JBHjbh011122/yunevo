@@ -2,7 +2,7 @@
 @section('title', 'Forget Password')
 
 @section('head')
-    <link rel="stylesheet" href="{{ asset('css/form.css') }}">
+    <link rel="stylesheet" href="{{secure_asset('css/form.css') }}">
 @endsection
 
 @section('content')
