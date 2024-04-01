@@ -27,7 +27,7 @@ class DialogflowServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $credentialsPath = storage_path('app/' . env('GOOGLE_APPLICATION_CREDENTIALS'));
+        $credentialsPath = base_path('ssl/' . env('GOOGLE_APPLICATION_CREDENTIALS'));
         putenv('GOOGLE_APPLICATION_CREDENTIALS=' . $credentialsPath);
     }
 }
