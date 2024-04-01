@@ -221,14 +221,14 @@ Route::get('/responsabilite', function () {
 // ========================= Boite reception ==================================================
 Route::get('/boite-reception/recus', [BoiteReceptionController::class, 'index'])->name('boite-reception.recus');
 Route::get('/boite-reception/envoyes', [BoiteReceptionController::class, 'sent'])->name('boite-reception.envoyes');
-Route::get('/boite-reception/compose', [BoiteReceptionController::class, 'compose'])->name('boite-reception.compose');
+// Route::get('/boite-reception/compose', [BoiteReceptionController::class, 'compose'])->name('boite-reception.compose');
 Route::get('/boite-reception/recu-detail/{id}', [BoiteReceptionController::class, 'showRecu'])->name('boite-reception.showRecu');
 Route::delete('/boite-reception/destroy/{id}', [BoiteReceptionController::class, 'destroy'])->name('boite-reception.destroy');
 Route::get('/boite-reception/envoye-detail/{id}', [BoiteReceptionController::class, 'showEnvoye'])->name('boite-reception.showEnvoye');
 Route::post('/boite-reception/store', [BoiteReceptionController::class, 'store'])->name('boite-reception.store');
 // Lettre automatique
 Route::get('/entraineur/{entraineurId}/contacter', [BoiteReceptionController::class, 'composeMessage'])->name('compose.message');
-// Route::get('/compose/{replyTo?}', [BoiteReceptionController::class, 'compose'])->name('boite-reception.compose');
+Route::get('/compose/{replyTo?}', [BoiteReceptionController::class, 'compose'])->name('boite-reception.compose');
 // Itinéraire pour la suppression massive de messages
 Route::post('/boite-reception/destroy-multiple', [BoiteReceptionController::class, 'destroyMultiple'])->name('boite-reception.destroyMultiple');
 
