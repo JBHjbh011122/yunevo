@@ -180,7 +180,7 @@
 
 .message {
     display: flex;
-    align-items: center;
+    align-items: flex-start !important;
 
     border-radius: 20px;
     color: black;
@@ -193,5 +193,6 @@
 }
 
 .message i {
-    margin: 0 10px;
+    margin: 0 6px;
+
 }

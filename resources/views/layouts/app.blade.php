@@ -34,17 +34,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/i18n/fr.js"></script>
 
-    <!-- connexion jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<!-- connexion jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
-    <!-- Connexion Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+<!-- Connexion Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Connexion de Popper.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<!-- Connexion de Popper.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 
-    <!-- Connexion Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Connexion Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
 
     <title>@yield('title')</title>
     @yield('head')
@@ -90,117 +93,86 @@
     </div>
 
     @include('layouts.footer')
-
     <script>
-        document.getElementById('chat-icon').addEventListener('click', function() {
-            var chatWindow = document.getElementById('chat-window');
-            if (chatWindow.style.display === 'none') {
-                chatWindow.style.display = 'block';
-            } else {
-                chatWindow.style.display = 'none';
+        document.addEventListener('DOMContentLoaded', function() {
+            // Lorsque le document est chargé
+            document.getElementById('chat-icon').addEventListener('click', function() {
+                var chatWindow = document.getElementById('chat-window');
+                // Affiche ou cache la fenêtre de chat
+                chatWindow.style.display = chatWindow.style.display === 'none' ? 'block' : 'none';
+            });
+
+            const chatInput = document.getElementById('chat-text'); // Entrée de texte du chat
+            const sendMessageButton = document.getElementById('send-message'); // Bouton d'envoi
+            const chatContent = document.querySelector('.chat-content'); // Contenu du chat
+
+            // Affiche le message dans le chat
+            function displayMessage(message, sender) {
+                const messageElement = document.createElement('div');
+                const textElement = document.createElement('span'); // Le texte du message
+                const iconElement = document.createElement('i'); // L'icône de l'utilisateur ou du bot
+
+                textElement.textContent = message;
+
+                if (sender === 'user') {
+                    // Si le message vient de l'utilisateur
+                    iconElement.className = 'fas fa-user';
+                    messageElement.className = 'message user-message';
+                    messageElement.appendChild(iconElement); // Ajoute l'icône à gauche
+                    messageElement.appendChild(textElement); // Ajoute le texte à droite
+                } else {
+                    // Si le message vient du bot
+                    iconElement.className = 'fas fa-user-cog';
+                    messageElement.className = 'message bot-message';
+                    messageElement.appendChild(textElement); // Ajoute le texte à gauche
+                    messageElement.appendChild(iconElement); // Ajoute l'icône à droite
+                }
+
+                messageElement.style.display = 'flex';
+                messageElement.style.alignItems = 'center'; // Centre les éléments verticalement
+
+                chatContent.appendChild(messageElement);
+                chatContent.scrollTop = chatContent.scrollHeight; // Fait défiler vers le dernier message
             }
-        });
 
-        document.getElementById('chat-text').addEventListener('keypress', function(event) {
-        if (event.key === 'Enter') {
-            var message = this.value;
-            this.value = ''; // Effacer la boîte de saisie
-
-            // Envoyer un message au serveur
-            fetch('/send-message', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
-                },
-                body: JSON.stringify({ message: message })
-            })
-            .then(response => response.json())
-            .then(data => {
-                var chatContent = document.querySelector('.chat-content');
-                // Ajout de réponses à la fenêtre de chat
-                chatContent.innerHTML += `<div>${data.reply}</div>`;
-            })
-            .catch(error => console.error('Error:', error));
-            }
-        });
-
-        document.addEventListener('DOMContentLoaded', function () {
-        // Obtenir des références au bouton d'envoi et à la zone de saisie
-        const sendMessageButton = document.getElementById('send-message');
-        const chatInput = document.getElementById('chat-text');
-        const chatWindow = document.querySelector('.chat-content');
-
-        // Écouter l'événement de clic du bouton d'envoi
-            sendMessageButton.addEventListener('click', function() {
-                const message = chatInput.value.trim();
+            // Envoie le message
+            function sendMessage() {
+                var message = chatInput.value.trim();
                 if (message) {
-                    // Afficher les messages de l'utilisateur
-                    displayMessage( message, 'user');
+                    displayMessage(message, 'user');
+                    chatInput.value = ''; // Nettoie le champ d'entrée
 
-                    // Effacer la boîte de saisie
-                    chatInput.value = '';
-
-                    // Envoyer un message au serveur
+                    // Envoie le message au serveur
                     fetch('/send-message', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
-                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content') // Le token CSRF pour la sécurité
                         },
-                        body: JSON.stringify({ message: message })
+                        body: JSON.stringify({ message: message }) // Le corps de la requête
                     })
                     .then(response => response.json())
                     .then(data => {
-                        // Afficher les réponses du Dialogflow
-                        displayMessage(data.reply, 'bot');
+                        displayMessage(data.reply, 'bot'); // Affiche la réponse du bot
                     })
-                    .catch(error => console.error('Error:', error));
+                    .catch(error => console.error('Error:', error)); // Gère les erreurs
                 }
-        });
-
-        // Affichage des messages dans la fenêtre de chat
-            function displayMessage(message, sender) {
-                const chatContent = document.querySelector('.chat-content');
-                const messageElement = document.createElement('div');
-                const textElement = document.createElement('span'); // Créer un nouvel élément span pour contenir le texte du message
-                const iconElement = document.createElement('i'); // Créer un nouvel élément i pour contenir l'icône
-
-                // Définir le contenu du texte
-                textElement.textContent = message;
-
-                // Configuration des classes d'icônes et des conteneurs de messages
-                if (sender === 'user') {
-                    iconElement.className = 'fas fa-user'; // icône de l'utilisateur
-                    messageElement.className = 'message user-message'; // Appliquer le style du message de l'utilisateur
-                    messageElement.style.justifyContent = 'flex-start'; // Icônes à gauche
-                } else if (sender === 'bot') {
-                    iconElement.className = 'fas fa-user-cog'; // Icône de l'administrateur
-                    messageElement.className = 'message bot-message';
-                    messageElement.style.justifyContent = 'flex-end'; // Icônes à droite
-                }
-
-                // Définir le conteneur du message dans une disposition flexible pour contrôler la position des icônes et du texte
-                messageElement.style.display = 'flex';
-                messageElement.style.alignItems = 'center';
-
-                // Ajouter du texte et des icônes aux conteneurs de messages
-                if (sender === 'user') {
-                    messageElement.appendChild(iconElement); // icône en premier
-                    messageElement.appendChild(textElement);
-                } else {
-                    messageElement.appendChild(textElement);// texte en premier
-                    messageElement.appendChild(iconElement);
-                }
-
-                // Ajout de conteneurs de messages à des conteneurs de contenu de chat
-                chatContent.appendChild(messageElement);
-
-                // Faire défiler la fenêtre de discussion pour connaître les dernières nouvelles
-                chatContent.scrollTop = chatContent.scrollHeight;
             }
+
+            // Gère l'appui sur la touche Entrée
+            chatInput.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter') {
+                    event.preventDefault(); // Empêche la nouvelle ligne
+                    sendMessage(); // Envoie le message
+                }
+            });
+
+            // Gère le clic sur le bouton d'envoi
+            sendMessageButton.addEventListener('click', sendMessage);
         });
-    </script>
+        </script>
+
+
 </body>
 
 </html>
