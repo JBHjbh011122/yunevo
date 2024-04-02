@@ -11,6 +11,7 @@
     <div class="container mt-5 form-inscrire">
         <div class="row">
             <div class="col-md-6 mx-auto" style="margin-top:100px;">
+                <a href="{{ url()->previous() }}" class="btn btn-light mb-3 font-weight-bold">&larr; Revenir</a>
                 <div class="card">
                     <div class="card-body">
                         <x-validation-errors class="mb-4" />
@@ -28,6 +29,7 @@
                                 <input type="text" class="form-control text-muted" id="titre" name="titre"
                                     placeholder="Titre" value="{{ old('titre') }}">
                             </div>
+
                             <div class="form-group mb-3">
                                 <div class="d-flex align-items-center form-control d-flex justify-content-between">
                                     <label id="file-name" for="photo-profil" class="mr-3 text-muted">Sélectionner une
@@ -37,7 +39,7 @@
                                             <label for="photo_profil" class="photo-profil-link">
                                                 <input type="file" class="form-control d-none" id="photo_profil"
                                                     name="photo_profil" onchange="updateFileName()">
-                                                <img src="{{secure_asset('/images/image.png') }}" alt="photo profil"
+                                                <img src="{{ asset('/images/image.png') }}" alt="photo profil"
                                                     width="30" height="30">
                                             </label>
                                         </div>
@@ -51,18 +53,28 @@
                                 <button type="submit" class="btn btn-primary btn-custom">Ajouter</button>
                             </div>
                         </form>
-                        <script>
-                            function updateFileName() {
-                                var input = document.getElementById('photo_profil');
-                                var fileName = document.getElementById('file-name');
-                                if (input.files && input.files.length > 0) {
-                                    fileName.textContent = input.files[0].name;
-                                }
-                            }
-                        </script>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
+@endsection
+@section('scripts')
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        function updateFileName() {
+            var input = document.getElementById('photo_profil');
+            var fileName = document.getElementById('file-name');
+            if (input.files && input.files.length > 0) {
+                fileName.textContent = input.files[0].name;
+            }
+        }
+
+        var fileInput = document.getElementById('photo_profil');
+        if (fileInput) {
+            fileInput.addEventListener('change', updateFileName);
+        }
+    });
+</script>
 @endsection

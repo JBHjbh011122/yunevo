@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('head')
-    <link rel="stylesheet" href="{{ asset('css/boite-reception.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/boite-reception.css') }}">
 
     <script>
         $(document).ready(function() {
@@ -35,7 +35,7 @@
 
 @section('content')
 @include('boite-reception.sous-navbar')
-    <h1 class="text-center">Boîte de réception</h1>
+    <h1 class="text-center text-center-text">Boîte de réception</h1>
     <div class="container white-background ">
         <div class="row">
             <div class="col-md-3">
@@ -60,15 +60,24 @@
                                         </option>
                                     @endforeach
                                 </select>
+                                @if ($errors->has('destinataire_id'))
+                                    <span class="text-danger">Le champ destinataire est obligatoire.</span>
+                                @endif
                             </div>
                             <div class="form-group">
                                 <label for="subject">Sujet:</label>
                                 <input type="text" class="form-control" name="sujet" id="subject"
                                     placeholder="Entrez le sujet">
+                                @if ($errors->has('sujet'))
+                                    <span class="text-danger">Le champ sujet est obligatoire.</span>
+                                @endif
                             </div>
                             <div class="form-group">
                                 <label for="message">Message:</label>
                                 <textarea class="form-control" name="texte_message" id="message" rows="4" placeholder="Entrez le message"></textarea>
+                                @if ($errors->has('texte_message'))
+                                    <span class="text-danger">Le champ message est obligatoire.</span>
+                                @endif
                             </div>
                             <button type="submit" class="btn envoyer-btn">Envoyer</button>
                         </form>

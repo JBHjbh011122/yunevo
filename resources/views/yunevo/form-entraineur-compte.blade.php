@@ -34,15 +34,14 @@
                             </div>
                             <div class="form-group mb-3">
                                 <div class="d-flex align-items-center form-control d-flex justify-content-between">
-                                    <label for="photo-profil" class="mr-3 text-muted">Photo de profil</label>
+                                    <label for="photo_profil" class="mr-3 text-muted">
+                                        <span id="file-name">Photo de profil</span>
+                                    </label>
                                     <div class="photo-profil d-flex">
                                         <div class="form-check form-check-inline">
                                             <label for="photo_profil" class="photo-profil-link">
-                                                <input type="file" class="form-control d-none" id="photo_profil"
-                                                    name="photo_profil" onchange="updateFileName()">
-                                                <span id="file-name"></span>
-                                                <img src="{{secure_asset('/images/image.png') }}" alt="photo profil"
-                                                    width="30" height="30">
+                                                <input type="file" class="form-control d-none" id="photo_profil" name="photo_profil" onchange="updateFileName()">
+                                                <img src="{{ asset('/images/image.png') }}" alt="photo profil" width="30" height="30">
                                             </label>
                                         </div>
                                     </div>
@@ -139,15 +138,6 @@
                                         });
                                     });
                                 });
-
-                                function updateFileName() {
-                                    var input = document.getElementById('photo_profil');
-                                    var fileName = document.getElementById('file-name');
-                                    if (input.files && input.files.length > 0) {
-                                        //  Mettre à jour le contenu du texte avec le nom du fichier sélectionné
-                                        fileName.textContent = input.files[0].name;
-                                    }
-                                }
                             </script>
 
                             <!-- Champ pour la description -->
@@ -164,3 +154,23 @@
         </div>
     </div>
 @endsection
+@section('scripts')
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    function updateFileName() {
+        var input = document.getElementById('photo_profil');
+        var fileName = document.getElementById('file-name');
+        if (input.files && input.files.length > 0) {
+            fileName.textContent = input.files[0].name;
+        }
+    }
+
+    var fileInput = document.getElementById('photo_profil');
+    if (fileInput) {
+        fileInput.addEventListener('change', updateFileName);
+    }
+});
+</script>
+@endsection
+
+

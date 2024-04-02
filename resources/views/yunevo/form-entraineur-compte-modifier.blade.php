@@ -2,13 +2,14 @@
 @section('title', 'Form-entraineur-compte-modifier')
 
 @section('head')
-    <link rel="stylesheet" href="{{secure_asset('css/form.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/form.css') }}">
 @endsection
 
 @section('content')
     <div class="container mt-5 form-inscrire">
         <div class="row">
             <div class="col-md-6 mx-auto" style="margin-top:100px;">
+                <a href="{{ url()->previous() }}" class="btn btn-light font-weight-bold mb-3">&larr; Revenir</a>
                 <div class="card">
                     <div class="card-body">
                         <x-validation-errors class="mb-4" />
@@ -25,12 +26,11 @@
                             <h5 class="card-title">Modifier le compte</h5>
                             <div class="form-group mb-3">
                                 <input type="text" class="form-control text-muted" name="nom"
-                                value="{{ old('nom', $user->nom) }}" >
+                                    value="{{ old('nom', $user->nom) }}">
                             </div>
-
                             <div class="form-group mb-3">
                                 <input type="text" class="form-control text-muted" name="prenom"
-                                value="{{ old('prenom', $user->prenom) }}" >
+                                    value="{{ old('prenom', $user->prenom) }}">
                             </div>
                             <div class="form-group mb-3">
                                 <div class="d-flex align-items-center form-control d-flex justify-content-between">
@@ -49,7 +49,7 @@
                                                     name="photo_profil" onchange="updateFileName()">
                                                 <span id="file-name"></span>
 
-                                                <img src="{{ secure_asset('/images/image.png') }}" alt="photo profil"
+                                                <img src="{{ asset('/images/image.png') }}" alt="photo profil"
                                                     width="30" height="30">
                                             </label>
                                         </div>
@@ -62,27 +62,30 @@
                                     <div class="category d-flex align-items-center position-relative">
                                         <div class="form-check form-check-inline">
                                             <a href="#" id="category-dropdown-toggle" class="category-link">
-                                                <img src="{{secure_asset('/images/down-arrow.png') }}" alt="category"
+                                                <img src="{{ asset('/images/down-arrow.png') }}" alt="category"
                                                     width="30" height="30">
                                             </a>
                                         </div>
 
                                         <div id="category-dropdown" class="category-select" style="display: none;">
                                             <div class="form-check">
-                                                <input type="radio" class="form-check-input" id="option1" name="categories" value="CrossFit"
-                                                 {{ $entraineur->categories_d_entraineur == 'CrossFit' ? 'checked' : '' }}>
+                                                <input type="radio" class="form-check-input" id="option1"
+                                                    name="categories" value="CrossFit"
+                                                    {{ $entraineur->categories_d_entraineur == 'CrossFit' ? 'checked' : '' }}>
                                                 <label class="form-check-label" for="option1">CrossFit</label>
                                             </div>
                                             <div class="form-check">
-                                                <input type="radio" class="form-check-input" id="option2" name="categories" value="Yoga et méditation"
-                                                {{ $entraineur->categories_d_entraineur == 'Yoga et méditation' ? 'checked' : '' }}>
+                                                <input type="radio" class="form-check-input" id="option2"
+                                                    name="categories" value="Yoga et méditation"
+                                                    {{ $entraineur->categories_d_entraineur == 'Yoga et méditation' ? 'checked' : '' }}>
                                                 <label class="form-check-label" for="option2">Yoga et méditation</label>
                                             </div>
                                             <div class="form-check">
                                                 <input type="radio" class="form-check-input" id="option3"
                                                     name="categories" value="Entraînement fonctionnel"
                                                     {{ $entraineur->categories_d_entraineur == 'Entraînement fonctionnel' ? 'checked' : '' }}>
-                                                <label class="form-check-label" for="option3">Entraînement fonctionnel</label>
+                                                <label class="form-check-label" for="option3">Entraînement
+                                                    fonctionnel</label>
                                             </div>
                                             <div class="form-check">
                                                 <input type="radio" class="form-check-input" id="option4"
@@ -94,19 +97,22 @@
                                                 <input type="radio" class="form-check-input" id="option5"
                                                     name="categories" value="Mobilité et étirement"
                                                     {{ $entraineur->categories_d_entraineur == 'Mobilité et étirement' ? 'checked' : '' }}>
-                                                <label class="form-check-label" for="option5">Mobilité et étirement</label>
+                                                <label class="form-check-label" for="option5">Mobilité et
+                                                    étirement</label>
                                             </div>
                                             <div class="form-check">
                                                 <input type="radio" class="form-check-input" id="option4"
                                                     name="categories" value="Entraînements de danse"
                                                     {{ $entraineur->categories_d_entraineur == 'Entraînements de danse' ? 'checked' : '' }}>
-                                                <label class="form-check-label" for="option6">Entraînements de danse</label>
+                                                <label class="form-check-label" for="option6">Entraînements de
+                                                    danse</label>
                                             </div>
                                             <div class="form-check">
                                                 <input type="radio" class="form-check-input" id="option5"
                                                     name="categories" value="Entraînements de force"
                                                     {{ $entraineur->categories_d_entraineur == 'Entraînements de force' ? 'checked' : '' }}>
-                                                <label class="form-check-label" for="option7">Entraînements de force</label>
+                                                <label class="form-check-label" for="option7">Entraînements de
+                                                    force</label>
                                             </div>
                                             <div class="form-check">
                                                 <input type="radio" class="form-check-input" id="option5"
@@ -125,7 +131,7 @@
                             <!-- Champ pour la description -->
                             <div class="form-description mb-3" data-placeholder="Décrivez-vous">
                                 <textarea class="text-muted" name="description" id="description-entraineur" rows="5">
-                                    {{ old('description',$entraineur->description_d_entraineur) }}</textarea>
+                                {{ old('description', $entraineur->description_d_entraineur) }}</textarea>
                             </div>
                             <div class="btn-sauvegarder">
                                 <button type="submit" class="btn btn-primary btn-custom">Modifier</button>
@@ -155,7 +161,6 @@
 
             var categoryOptions = document.getElementsByName('categories');
             var categoryLabel = document.querySelector('label[for="category"]');
-
             Array.from(categoryOptions).forEach(function(option) {
                 option.addEventListener('change', function() {
                     if(option.checked) {

@@ -7,6 +7,7 @@
 @endsection
 
 @section('content')
+<div class="container-respons">
     <div class="container-responsabilite">
         <h1>Responsabilité</h1>
         <section>
@@ -27,4 +28,6 @@
                 droits d'auteur, les marques déposées ou d'autres lois applicables.</p>
         </section>
     </div>
+</div>
 @endsection
+

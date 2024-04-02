@@ -7,7 +7,7 @@
 @endphp
 
 @section('head')
-    <link rel="stylesheet" href="{{secure_asset('css/videos-publiques.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/videos-publiques.css') }}">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 @endsection
 
@@ -16,13 +16,13 @@
 @endphp
 
 @section('content')
-    <h1 class="text-center titre-privees">Votre vidéos privées</h1>
+    <h1 class="text-center titre-privees text-center-text">Votre vidéos privées</h1>
 
     <div class="main-container container mt-4 mb-4 priv-titte">
         <div class="dropdown mb-4">
             <button class="btn btn-pr dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
-                Sélectionner le type d'entraînement...
+                    Type d'entraînement...
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 @foreach ($sortedVideos as $category => $videos)
@@ -58,7 +58,7 @@
                         @endif
 
                         <h6 class="font-weight-bold video-info">
-                            <img src="{{secure_asset('images/athletics.png') }}" class="logo" style="height: 25px; width: 25px;">
+                            <img src="{{ asset('images/athletics.png') }}" class="logo" style="height: 25px; width: 25px;">
                             {{ $category }}
                         </h6>
 
@@ -80,6 +80,18 @@
                 $('html, body').animate({
                     scrollTop: offset - 100
                 }, 1000);
+            });
+        });
+        $(document).ready(function() {
+            function initDropdown() {
+                $('.dropdown-toggle').dropdown();
+            }
+            initDropdown();
+            $('.dropdown-toggle').on('click', function() {
+            });
+
+            $('.modal .close, .modal .btn-secondary').on('click', function() {
+             initDropdown();
             });
         });
     </script>

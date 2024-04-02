@@ -70,7 +70,7 @@ video {
     padding: 0.6rem;
     text-decoration: none;
     border-radius:6cap;
-    margin-top: -1rem;   
+    margin-top: -1rem;
 }
 
 .video-item a:hover {
@@ -155,5 +155,26 @@ video {
 /* ----- Commande ------*/
 .bg-typ{
     background-color: #D9D9D9;
-    color: #AE8B2F; 
+    color: #AE8B2F;
+}
+@media (max-width: 768px) {
+    .secondary-navbar {
+        height: auto;
+    }
+
+    .nav-link, .nav-item{
+      font-size: 14px !important;
+      padding-top: 1px !important;
+      margin: 0px !important;
+    }
+
+    h1{
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .compte-client{
+      display: flex;
+      justify-content: center;
+    }
 }

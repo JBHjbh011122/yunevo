@@ -176,6 +176,13 @@ class BoiteReceptionController extends Controller
     public function compose(Request $request, $replyTo = null)
     {
         $user = Auth::user();
+        if ($request->isMethod('post')) {
+            $validatedData = $request->validate([
+                'destinataire_id' => 'required',
+                'sujet' => 'required|string|max:255',
+                'texte_message' => 'required|string',
+            ]);
+        }
 
         // Variable pour stocker l'utilisateur sélectionné par défaut
         $selectedUser = null;
@@ -199,6 +206,7 @@ class BoiteReceptionController extends Controller
 
         return view('boite-reception.compose', compact('contactedUsers', 'selectedUser', 'isNew'));
     }
+
 }
 
 

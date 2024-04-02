@@ -2,8 +2,8 @@
 @section('title', 'Nos entraîneurs')
 
 @section('head')
-    <link rel="stylesheet" href="{{secure_asset('css/form.css') }}">
-    <link rel="stylesheet" href="{{ secure_asset('css/nos-entraineur.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/form.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/nos-entraineur.css') }}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 @endsection
 
@@ -41,7 +41,7 @@
             <div class="dropdown mb-4">
                 <button class="btn btn-pr dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
-                    Sélectionner le type d'entraînement...
+                    Type d'entraînement...
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     @foreach ($categories as $category)
@@ -56,10 +56,10 @@
                 @foreach ($entraineurs as $entraineur)
                     <div class="entraineur">
                         <div class="info-entraineur row">
-                            <div class="col-md-2 mb-4 d-flex align-items-center justify-content-center">
-                                <!-- Image du modèle de l'utilisateur -->
-                                <img src="{{ $entraineur->user->lien_aws_photo_compte }}" class="rounded-circle"
-                                    alt="entraineur" width="130" height="130">
+                            <div class="col-lg-2 mb-4 d-flex align-items-center justify-content-center">
+                                <div class="img-wrapper">
+                                    <img src="{{ $entraineur->user->lien_aws_photo_compte }}" alt="entraineur" class="rounded-circle">
+                                </div>
                             </div>
                             <div class="col-md-8 mb-4">
                                 <!-- Prenom et Nom du modèle de l'utilisateur -->
@@ -73,7 +73,7 @@
                                     {{ $entraineur->description_d_entraineur }}
                                 </p>
                             </div>
-                            <div class="col-md-2 mb-4 d-flex align-items-center justify-content-center btn-contacter">
+                            <div class="col-lg-2 mb-4 d-flex align-items-center justify-content-center btn-contacter">
                                 <a href="{{ route('compose.message', ['entraineurId' => $entraineur->user->id]) }}"
                                     class="btn btn-primary btn-custom"
                                     data-tooltip="Envoyer un courriel automatique au entraineur"
@@ -92,6 +92,22 @@
 @section('scripts')
     <script>
     $(document).ready(function() {
+
+         // Fonction pour réinitialiser le composant de dropdown
+    function resetDropdown() {
+        $('#dropdownMenuButton').dropdown('dispose').dropdown(); // Disposer et réinitialiser le dropdown
+    }
+
+    // Gestion de l'événement de clic sur le bouton de filtrage
+    $('#dropdownMenuButton').on('click', function() {
+        resetDropdown(); // Réinitialiser le dropdown lors du clic sur le bouton de filtrage
+    });
+
+    // Gestion de l'événement de clic sur le modal
+    $('.modal .close, .modal .btn-secondary').on('click', function() {
+        resetDropdown(); // Réinitialiser le dropdown lors de la fermeture du modal
+    });
+
         $('.btn-custom').click(function(e) {
             // Utilisez .attr() pour lire la valeur de l'attribut sous forme de chaîne
             var isClient = $(this).attr('data-is-client') === 'true';
@@ -115,5 +131,6 @@
             }, 500);
         });
     });
+
     </script>
 @endsection

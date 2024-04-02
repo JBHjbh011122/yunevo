@@ -2,16 +2,15 @@
 @section('title', 'Form_video_modifier')
 
 @section('head')
-    <link rel="stylesheet" href="{{ secure_asset('css/form.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/form.css') }}">
 @endsection
 
 @section('content')
     <div class="container mt-5 form-inscrire">
-        <a href="{{ url()->previous() }}" class="btn btn-light  font-weight-bold" style="margin-top:100px;">&larr; Revenir</a>
         <div class="row">
             <div class="col-md-6 mx-auto" style="margin-top:10px;">
-
-                <div class="card">
+                <a href="{{ url('compte-entraineur') }}" class="btn btn-light  font-weight-bold" style="margin-top:100px;">&larr; Revenir</a>
+                <div class="card mt-3">
                     <div class="card-body">
                         <x-validation-errors class="mb-4" />
 
@@ -20,7 +19,6 @@
                                 {{ session('success') }}
                             </div>
                         @endif
-
                         <form method="POST" action="{{ route('video.update', $video->id) }}" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
@@ -36,21 +34,18 @@
                                 <div class="d-flex align-items-center form-control d-flex justify-content-between">
                                     <label for="video-file" class="mr-3 text-muted" id="label-photo-profil">
                                         @if ($video->lien_aws)
-                                            <span id="file-name">Changer la video si besoin</span>
+                                        <span id="file-name-video">  Changer la video si besoin</span>
                                         @else
-                                            <span id="file-name">Sélectionner une video</span>
+                                        <span id="file-name-video">   Sélectionner une video</span>
                                         @endif
                                     </label>
 
                                     <div class="photo-profil d-flex">
                                         <div class="form-check form-check-inline">
                                             <label for="video-file" class="photo-profil-link">
-                                                <input type="file" class="form-control d-none" id="video-file"
-                                                    name="video-file" onchange="updateFileName()">
-                                                <span id="file-name"></span>
-
-                                                <img src="{{secure_asset('/images/image.png') }}" alt="photo profil"
-                                                    width="30" height="30">
+                                                <input type="file" class="form-control d-none" id="video-file" name="video-file" onchange="updateFileNameVideo()">
+                                                <span id="file-name-video"></span>
+                                                <img src="{{ asset('/images/image.png') }}" alt="photo profil" width="30" height="30">
                                             </label>
                                         </div>
                                     </div>
@@ -90,6 +85,8 @@
             </div>
         </div>
     </div>
+    @endsection
+    @section('scripts')
     <script>
         window.onload = function() {
             // Obtenir le paramètre "type de vidéo" de l'URL
@@ -107,13 +104,13 @@
             }
             };
 
-             function updateFileName() {
-                                var input = document.getElementById('video-file');
-                                var fileName = document.getElementById('file-name');
-                                if (input.files && input.files.length > 0) {
-                                    //  Mettre à jour le contenu du texte avec le nom du fichier sélectionné
-                                    fileName.textContent = input.files[0].name;
-                                }
-                            }
+
+            function updateFileNameVideo() {
+    var input = document.getElementById('video-file');
+    var fileName = document.getElementById('file-name-video');
+    if (input.files && input.files.length > 0) {
+        fileName.textContent = input.files[0].name;
+    }
+}
     </script>
 @endsection

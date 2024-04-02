@@ -7,7 +7,7 @@
 
 @section('content')
 @include('boite-reception.sous-navbar')
-    <h1 class="text-center">Boîte de réception</h1>
+    <h1 class="text-center text-center-text">Boîte de réception</h1>
     <div class="container white-background">
         <div class="row">
             <!-- Barre latérale pour la navigation dans la boîte de réception -->
@@ -15,7 +15,7 @@
                 @include('boite-reception.nav-boite')
                 {{-- Commander video --}}
                 @if(Auth::user() && Auth::user()->user_type == 'entraineur')
-                <a href="{{ route('commande-privees-video', ['clientId' => $clientId, 'trainerId' => $trainerId]) }}" 
+                <a href="{{ route('commande-privees-video', ['clientId' => $clientId, 'trainerId' => $trainerId]) }}"
                     class="btn list-group-item list-group-item-action mt-5 custom-bg font-weight-bold  ">Fournir une vidéo</a>
                 @endif
             </div>

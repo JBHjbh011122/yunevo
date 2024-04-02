@@ -12,7 +12,7 @@
         <div class="dropdown mb-4">
             <button class="btn btn-pr dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
-                Sélectionner le type d'entraînement...
+                Type d'entraînement...
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 @foreach ($trainerCategories as $category)
@@ -52,4 +52,20 @@
             @endforeach
         </div>
     </div>
+@endsection
+@section('scripts')
+    <script>
+        $(document).ready(function() {
+            function initDropdown() {
+                $('.dropdown-toggle').dropdown();
+            }
+            initDropdown();
+            $('.dropdown-toggle').on('click', function() {
+            });
+
+            $('.modal .close, .modal .btn-secondary').on('click', function() {
+             initDropdown();
+            });
+        });
+    </script>
 @endsection

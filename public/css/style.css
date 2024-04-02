@@ -88,7 +88,7 @@ footer {
     margin-top: auto;
     font-size: 16px; /* La taille du texte dépendra de la largeur de l'écran */
     font-weight: 600;
-    width: 100%; 
+    width: 100%;
 }
 
 @media (max-width: 600px) {
@@ -215,7 +215,16 @@ footer {
     display: none;
     z-index: 9999;
 }
+@media (max-width: 668px) {
 
+    .overlay-nav a {
+        font-size: 25px!important;
+    }
+
+    .overlay-nav .closebtn {
+        font-size: 30px;
+    }
+}
 /* secondary-navbar */
 .secondary-navbar {
     background-color: #D9D9D9;

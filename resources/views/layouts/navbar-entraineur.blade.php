@@ -7,13 +7,14 @@ $unreadMessagesCount = \App\Models\Message::where('destinataire_id', Auth::id())
         <li class="nav-item <?php echo ($_SERVER['REQUEST_URI'] == '/compte-entraineur.php' ? 'active-secondary' : ''); ?>">
             <a class="nav-link" href="{{ url('/compte-entraineur') }}">Compte</a>
         </li>
-        <li class="nav-item {{ Request::is('boite-reception/recus') ? 'active-secondary' : '' }}">
+        <li class="nav-item {{ Request::is('boite-reception/recus', 'boite-reception/envoyes', 'boite-reception/recu-detail/', 'boite-reception/envoye-detail/', 'boite-reception/compose', 'compose', 'compose/') ? 'active-secondary' : '' }}">
             <a class="nav-link" href="{{ route('boite-reception.recus') }}">
                 Messages
                 @if ($unreadMessagesCount > 0)
-                <img src="{{ secure_asset('images/icon-notification.png') }}" alt="Unread Messages" class="notification-icon">
+                    <img src="{{ asset('images/notification.png') }}" alt="Unread Messages" class="notification-icon">
                 @endif
             </a>
         </li>
+
     </ul>
 </div>

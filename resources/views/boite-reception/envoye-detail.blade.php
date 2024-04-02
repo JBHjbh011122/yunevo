@@ -6,7 +6,7 @@
 
 @section('content')
 @include('boite-reception.sous-navbar')
-    <h1 class="text-center">Boîte de réception</h1>
+    <h1 class="text-center text-center-text">Boîte de réception</h1>
     <div class="container white-background">
         <div class="row">
             <div class="col-md-3">

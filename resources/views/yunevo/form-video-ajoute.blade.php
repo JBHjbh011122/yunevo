@@ -36,7 +36,7 @@
                                             <label for="video-file" class="photo-profil-link">
                                                 <input type="file" class="form-control d-none" id="video-file"
                                                     name="video-file" onchange="onFileSelected(event)">
-                                                <img src="{{ secure_asset('/images/image.png') }}" alt="photo profil"
+                                                <img src="{{ asset('/images/image.png') }}" alt="photo profil"
                                                     width="30" height="30">
                                             </label>
                                         </div>
@@ -74,6 +74,9 @@
             </div>
         </div>
     </div>
+
+@endsection
+@section('scripts')
     <script>
     window.onload = function() {
         // Obtenir les paramètres de type de vidéo à partir de l'URL
@@ -90,5 +93,11 @@
             }
         }
         };
+        function onFileSelected(event) {
+    const fileName = event.target.files[0].name;
+    const label = document.querySelector('label[for="video-file"]');
+    label.textContent = fileName;
+}
         </script>
-@endsection
+   @endsection
+
