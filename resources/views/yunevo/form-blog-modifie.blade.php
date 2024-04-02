@@ -10,6 +10,7 @@
     <div class="container mt-5 form-inscrire">
         <div class="row">
             <div class="col-md-6 mx-auto" style="margin-top:100px;">
+                <a href="{{ url()->previous() }}" class="btn btn-light mb-4 font-weight-bold">&larr; Revenir</a>
                 <div class="card">
                     <div class="card-body">
                         <x-validation-errors class="mb-4" />

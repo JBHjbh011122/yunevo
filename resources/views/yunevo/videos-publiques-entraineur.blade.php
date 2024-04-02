@@ -56,8 +56,9 @@
                 @empty
                 <div class="no-videos-message ">
                     <h3>Vous n'avez pas encore de video. </h3>
-                    <p>Ajouter votre première vidéo publique!<a href="{{ url('/form-video-ajoute') }}">
-                        <img src="{{ asset('images/more.png') }}" alt="" class="more"></a>
+                    <p>Ajouter votre première vidéo publique!
+                        <a class="" href="{{ route('video-ajoute', ['type' => 'publique']) }}">
+                            <img src="{{ asset('images/more.png') }}" alt="" class="more"></a>
                     </p>
                 </div>
             @endforelse

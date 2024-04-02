@@ -3,20 +3,18 @@
 
 @section('head')
 
-    <link rel="stylesheet" href="{{secure_asset('css/index.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/index.css') }}">
 @endsection
 
 @section('content')
     <div class="main-index">
         <main class="content">
             <section class="intro-image">
-                <img src="{{ secure_asset('images/running.png') }}" alt="">
+                <img src="{{ asset('images/running.png') }}" alt="">
                 <div class="text-part">
                     <h2>Bienvenue sur <br> <span class="larger-text">YunEvО SPORT</span> <br>Transformez votre vie, avec une
                         guidance professionnelle à chaque étape.</h2>
-                    @if (auth()->guest() ||
-                            (!auth()->user()->isClient() &&
-                                !auth()->user()->isEntraineur()))
+                    @if (auth()->guest() || (!auth()->user()->isClient() && !auth()->user()->isEntraineur()))
                         <a href="{{ route('login') }}">
                             <button class="btn btn-custom" title="Cliquez pour vous connecter ou vous inscrire">Se
                                 connecter</button>
@@ -39,50 +37,71 @@
                     <div class="advantage-column">
                         <!-- Accessibilité -->
                         <div class="advantage-item">
-                            <h3><img class="advantage-icon" src="{{ secure_asset('images/planet.png') }}"
+                            <h3><img class="advantage-icon" src="{{ asset('images/planet.png') }}"
                                     alt="Icône Accessibilité">Accessibilité</h3>
                             <p>Entraînez–vous de n’importe quel endroit du monde, en économisant du temps sur le trajet.</p>
                         </div>
-                        <img class="advantage-image" src="{{secure_asset('images/man.jpg') }}" alt="Image Accessibilité">
+                        <img class="advantage-image" src="{{ asset('images/man.jpg') }}" alt="Image Accessibilité">
                         <!-- Horaire Flexible -->
                         <div class="advantage-item">
-                            <h3><img class="advantage-icon" src="{{secure_asset('images/clock.png') }}"
+                            <h3><img class="advantage-icon" src="{{ asset('images/clock.png') }}"
                                     alt="Icône Horaire Flexible">Horaire flexible</h3>
                             <p>Des entraînements à l'heure qui vous convient.</p>
                         </div>
                     </div>
                     <!-- Deuxième Colonne -->
                     <div class="advantage-column  column-section">
-                        <img class="advantage-image" src="{{secure_asset('images/fit.jpg') }}" alt="Image Choix Variés">
+                        <img class="advantage-image" src="{{ asset('images/fit.jpg') }}" alt="Image Choix Variés">
                         <!-- Choix Variés -->
                         <div class="advantage-item">
-                            <h3>Choix variés <img class="advantage-icon" src="{{secure_asset('images/choice.png') }}"
+                            <h3>Choix variés <img class="advantage-icon" src="{{ asset('images/choice.png') }}"
                                     alt="Icône Choix Variés"></h3>
                             <p>Choisissez votre entraîneur préféré sur YunEvo SPORT et l'entraînement qui vous convient.</p>
                         </div>
-                        <img class="advantage-image" src="{{ secure_asset('images/yoga.jpg') }}" alt="Image Horaire Flexible">
+                        <img class="advantage-image" src="{{ asset('images/yoga.jpg') }}" alt="Image Horaire Flexible">
                     </div>
                 </div>
             </section>
+            <!-- section carrousel -->
             <section class="reviews-section" id="reviewsSection">
                 <h2 class="title-avan">Avis de nos utilisateurs</h2>
                 <div id="reviewsCarousel" class="carousel slide" data-ride="carousel">
-                    <?php
-                    $reviews = json_decode(file_get_contents(public_path('data/reviews.json')), true);
-                    ?>
                     <!-- Contenu du carrousel -->
                     <div class="carousel-inner">
                         @foreach ($reviews as $index => $review)
                             <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
                                 <div class="review-container">
                                     <div class="review-left">
-                                        <img src="{{ secure_asset($review['img']) }}" alt="{{ $review['name'] }}"
-                                            class="carousel-review-image">
-                                        <span>{{ $review['name'] }}</span>
+                                        <img src="{{ $review->user->lien_aws_photo_compte ?? asset('images/profil.jpeg') }}"
+                                            alt="Avatar Entraineur" title="Profil"
+                                            style="height: 100px; width: 100px; border-radius: 50%;">
+                                        <span>{{ $review->user->prenom }} {{ $review->user->nom }}</span>
                                     </div>
                                     <div class="review-right">
-                                        <div class="stars">★★★★☆</div>
-                                        <p>{{ $review['review'] }}</p>
+                                        <div class="star-rating">
+                                            @php
+                                                // Détermination du nombre d'étoiles ombrées en fonction des évaluations des utilisateurs
+                                                $rating = $review->evaluation;
+                                            @endphp
+                                            @for ($i = 1; $i <= 5; $i++)
+                                                @if ($i <= $rating)
+                                                    <!-- Si le numéro d'étoile actuel est inférieur ou égal au nombre d'étoiles ombrées, affichez l'étoile ombrée -->
+                                                    <img class="" src="{{ asset('images/star-filled.png') }}"
+                                                        data-active="images/star-filled.png"
+                                                        data-rating="{{ $i }}" alt="Star {{ $i }}"
+                                                        width="30" height="30">
+                                                @else
+                                                    <!-- Sinon, affichez une étoile vide -->
+                                                    <img class="" src="{{ asset('images/star.png') }}"
+                                                        data-active="images/star-filled.png"
+                                                        data-rating="{{ $i }}" alt="Star {{ $i }}"
+                                                        width="30" height="30">
+                                                @endif
+                                            @endfor
+                                        </div><br>
+                                        <div class="category-icons">
+                                            <p>{{ $review->commentaire }}</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -100,6 +119,8 @@
                     <button>Évaluez l'application</button>
                 </a>
             </section>
+            <!-- section carrousel Fin-->
+
             <section class="reg-section  column-section">
                 <div class="join-team-section">
                     <div class="text-section">
@@ -115,7 +136,7 @@
                             @endif
                         </div>
                     </div>
-                    <img src="{{ secure_asset('images/fitness.jpg') }}" alt="Entraîneur de Fitness">
+                    <img src="{{ asset('images/fitness.jpg') }}" alt="Entraîneur de Fitness">
                 </div>
             </section>
         </main>

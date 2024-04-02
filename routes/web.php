@@ -34,9 +34,7 @@ use App\Http\Controllers\CommandeController;
 |
 */
 
-Route::get('/', function () {
-    return view('yunevo/index');
-});
+Route::get('/', [AvisController::class, 'showReviewsAccueil']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -69,7 +67,7 @@ Route::get('/detail-video/{video_id}', [VideoController::class, 'show'])->name('
 Route::get('/blog', [App\Http\Controllers\BlogController::class, 'index'])->name('blog.index');
 Route::get('/detail-blog/{blog_id}', [BlogController::class, 'show'])->name('blog.show');
 Route::get('/blog-entraineur', [BlogController::class, 'showEntraineurBlogs'])->name('yunevo.blog-entraineur');
-Route::post('//form-blog-ajoute', [BlogFormController::class, 'store'])->name('ajout-blog');
+Route::post('/form-blog-ajoute', [BlogFormController::class, 'store'])->name('ajout-blog');
 Route::delete('/blog/{blog_id}', [BlogController::class, 'destroy'])->name('blog.destroy');
 Route::get('/blog/{blog}/edit', [BlogFormController::class, 'edit'])->name('modifie-blog');
 Route::put('/blog/{blog}', [BlogFormController::class, 'update'])->name('blog.update');
@@ -206,9 +204,6 @@ Route::get('/register-entraineur', function () {
     return view('auth.register-entraineur');
 })->middleware(['guest'])->name('register-entraineur');
 
-Route::get('/', function () {
-    return view('yunevo/index');
-});
 
 Route::get('/form-inscrire', function () {
     return view('register');

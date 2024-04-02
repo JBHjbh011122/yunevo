@@ -38,12 +38,12 @@ class AvisController extends Controller{
     public function showReviews()
     {
         // Récupération de tous les avis de la base de données
-        $reviews = Review::all();        
+        $reviews = Review::all();
         // Calcul de la note moyenne
         $averageRating = $reviews->avg('evaluation');
         return view('yunevo.avis', compact('reviews', 'averageRating'));
     }
- 
+
     public function deleteReview($id)
     {
         // Trouver un avis par son identifiant
@@ -53,9 +53,13 @@ class AvisController extends Controller{
         // Après avoir supprimé avec succès un avis, nous redirigeons l'utilisateur vers nouveau
         return redirect()->back()->with('success', 'Le commentaire a été supprimé avec succès.');
     }
+
+
+    public function showReviewsAccueil()
+    {
+        // Récupération de tous les avis de la base de données
+        $reviews = Review::all();
+
+        return view('yunevo.index', compact('reviews'));
+    }
 }
-
-
-
-
-
