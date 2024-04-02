@@ -8,7 +8,6 @@
 
 @section('head')
     <link rel="stylesheet" href="{{ asset('css/videos-publiques.css') }}">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 @endsection
 
 @php

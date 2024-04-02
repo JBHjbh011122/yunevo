@@ -2,7 +2,7 @@
 @section('title', 'Form_avis_ajout')
 
 @section('head')
-    <link rel="stylesheet" href="{{ secure_asset('css/form.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/form.css') }}">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.js"></script>
@@ -23,12 +23,14 @@
                                 {{ session('success') }}
                             </div>
                         @endif
+
+
                         <form method="POST" action="{{ route('ajout-photo') }}" enctype="multipart/form-data">
                             @csrf
                             <h5 class="card-title">Ajouter une photo</h5>
                             <div class="form-group mb-3">
                                 <div class="d-flex align-items-center form-control d-flex justify-content-between">
-                                    <label id="file-name" class="mr-3 text-muted">Photo</label>
+                                    <label  id="file-name" class="mr-3 text-muted">Photo</label>
                                     <div class="photo-profil d-flex">
                                         <div class="form-check form-check-inline">
                                             <label for="photo_profil" class="photo-profil-link">
@@ -42,6 +44,7 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div class="form-group mb-3">
                                 <div class="d-flex align-items-center form-control d-flex justify-content-between">
                                     <label class="mr-3 text-muted">
@@ -49,12 +52,11 @@
                                     </label>
                                     <div class="form-check form-check-inline d-flex align-items-center">
                                         <!-- Visible Date Input -->
-                                        <input type="text" id="dateInput" name="datePrise" class="form-control"
-                                            style="position: absolute; z-index: 2;">
+                                        <input type="text" id="dateInput" name="datePrise" class="form-control" style="position: absolute; z-index: 2;">
                                         <!-- Calendar Icon -->
                                         <img src="{{ asset('/images/calendar.png') }}" alt="calendar" width="30"
-                                            height="30" id="calendarIcon"
-                                            style="cursor: pointer; position: relative;background-color:#CFCCBE; z-index: 1200 !important;">
+                                        height="30" id="calendarIcon"
+                                        style="cursor: pointer; position: relative;background-color:#CFCCBE; z-index: 1200 !important;" >
                                     </div>
                                 </div>
                             </div>
@@ -82,8 +84,8 @@
             document.getElementById('photo_profil').addEventListener('change', updateFileName);
             var calendarIcon = document.getElementById('calendarIcon');
             var fp = flatpickr("#dateInput", {
+                disableMobile: true,
                 onChange: function(selectedDates, dateStr, instance) {
-
                     document.getElementById('dateLabel').textContent = dateStr;
                 },
             });

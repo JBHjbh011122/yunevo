@@ -4,21 +4,21 @@
     <link rel="stylesheet" href="{{ secure_asset('css/boite-reception.css') }}">
 
     <script>
-        $(document).ready(function() {
-            function matchCustom(params, data) {
-                if ($.trim(params.term) === '') {
-                    return data;
-                }
-                if (typeof data.text === 'undefined') {
-                    return null;
-                }
-                var regex = new RegExp("\\b" + params.term, 'i');
-                if (regex.test(data.text)) {
-                    var modifiedData = $.extend({}, data, true);
-                    return modifiedData;
-                }
+        function matchCustom(params, data) {
+            if ($.trim(params.term) === '') {
+                return data;
+            }
+            if (typeof data.text === 'undefined') {
                 return null;
             }
+            var regex = new RegExp("\b" + params.term, 'i');
+            if (regex.test(data.text)) {
+                var modifiedData = $.extend({}, data, true);
+                return modifiedData;
+            }
+            return null;
+        }
+        function initSelect2() {
             $('#recipient').select2({
                 minimumInputLength: 0,
                 matcher: matchCustom,
@@ -26,12 +26,17 @@
                 allowClear: true,
                 language: "fr"
             });
+        }
+        $(document).ready(function() {
+            initSelect2();
         });
-
+        $(window).resize(function() {
+            $('#recipient').select2('destroy');
+            initSelect2();
+        });
     </script>
+
 @endsection
-
-
 
 @section('content')
 @include('boite-reception.sous-navbar')

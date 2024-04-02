@@ -116,7 +116,7 @@
                                             <img class="img-blog" src="{{ $article->lien_aws_photo_blog }}"
                                                 alt="{{ $article->titre }}">
                                             <div class="category-icons">
-                                                <h6>{{ $article->titre }}</h6>
+                                                <h6 class="font-weight-bold ">{{ $article->titre }}</h6>
                                             </div>
                                         </div>
                                     </a>
