@@ -11,7 +11,7 @@
      <h1 class="text-center titre-public">Vidéos publiques sélectionnée par categorie : <span
              class="font-weight-bold font-italic">{{ $category }}</span></h1>
      <div class="main-container  container mt-4 mb-4 ">
-         <a href="{{ url('allvideos-publiques') }}" class="btn btn-light mb-4 font-weight-bold">&larr; Revenir</a>
+         <a href="{{ url('videos-publiques') }}" class="btn btn-light mb-4 font-weight-bold">&larr; Revenir</a>
 
          <div class="container-videos">
              @if ($videosByCategory->isEmpty())
