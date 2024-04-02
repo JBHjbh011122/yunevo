@@ -62,6 +62,8 @@ body, html {
 }
 
 
+
+
 @media (max-width: 1000px) {
     .navbar {
         min-height: 60px;
@@ -70,7 +72,7 @@ body, html {
         font-size: 4vw !important;
     }
     .nav-link {
-        font-size: 18px !important;
+        font-size: 20px !important;
     }
 }
 
@@ -143,6 +145,8 @@ footer {
 
 }
 
+
+
 .icon, .footer-item {
     flex: 1;
     display: flex;
@@ -202,7 +206,7 @@ footer {
 /* Positionne le bouton de fermeture (coin supérieur droit) */
 .overlay-nav .closebtn {
     position: absolute;
-    top: 100px;
+    top: 20px;
     right: 20px;
     font-size: 40px;
     color: #000000;
@@ -215,21 +219,23 @@ footer {
     display: none;
     z-index: 9999;
 }
-@media (max-width: 668px) {
 
+@media (max-width: 668px) {
+    /* Уменьшение размера шрифта для ссылок навигации */
     .overlay-nav a {
         font-size: 25px!important;
     }
-
+    /* Перемещение кнопки закрытия в верхний правый угол */
     .overlay-nav .closebtn {
         font-size: 30px;
     }
 }
+
 /* secondary-navbar */
 .secondary-navbar {
     background-color: #D9D9D9;
-    padding-top: 120px ;
-    padding-bottom: 20px;
+    padding-top: 100px ;
+    padding-bottom: 10px;
 }
 
 .secondary-navbar ul {
@@ -260,7 +266,7 @@ footer {
     }
 
     .secondary-navbar li {
-        margin: 10px 0;
+        margin: 5px 0;
     }
 }
 
@@ -303,4 +309,36 @@ footer {
 .custom-footer a:hover {
     text-decoration: none;
     color: inherit;
+}
+/* secondary-navbar */
+.secondary-navbar {
+    position: sticky !important;
+    top: 100px!important;
+    z-index: 1200 !important;
+    padding: 0!important;
+    height: 80px!important;
+    display: flex!important;
+    align-items: center!important;
+    justify-content: flex-end!important;
+  }
+
+  @media (max-width: 768px) {
+    .secondary-navbar {
+        height: auto!important;
+        justify-content: flex-start !important;
+    }
+
+    .nav-link, .nav-item{
+      font-size: 14px !important;
+      padding: 3px !important;
+      margin: 0px !important;
+    }
+
+    h1{
+      font-size: 20px!important;
+      font-weight: bold!important;
+    }
+  }
+  .text-center-text {
+    padding-top: 130px !important;
 }
