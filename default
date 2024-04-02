@@ -5,9 +5,7 @@ server {
     listen [::]:8080;
     server_name yunevo.azurewebsites.net;
 
-    client_max_body_size 50m;
-    client_body_buffer_size:5m;
-    client_body_temp_path /var/tmp/nginx/client_body_temp 1 2;
+    client_max_body_size 100m;
 
     root /home/site/wwwroot/public;
     port_in_redirect off;
