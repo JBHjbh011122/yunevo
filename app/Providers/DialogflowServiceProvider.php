@@ -28,6 +28,12 @@ class DialogflowServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $credentialsPath = base_path('ssl/' . env('GOOGLE_APPLICATION_CREDENTIALS'));
-        putenv('GOOGLE_APPLICATION_CREDENTIALS=' . $credentialsPath);
+        putenv('GOOGLE_APPLICATION_CREDENTIALS=' . $credentialsPath); $credentialsJson = file_get_contents(base_path('ssl/yunevo.json'));
+        $decodedJson = json_decode($credentialsJson, true);
+        if ($decodedJson) {
+            putenv('GOOGLE_APPLICATION_CREDENTIALS=' . base_path('ssl/yunevo.json'));
+        } else {
+            // 处理错误
+        }
     }
 }
