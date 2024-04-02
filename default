@@ -34,7 +34,6 @@ server {
     }
 
     error_page 404 /index.php;
-    client_max_body_size 100M;
 
     location ~ /\.(?!well-known).* {
         deny all;
