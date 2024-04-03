@@ -77,7 +77,7 @@
                 var category = $(this).data('category');
                 var offset = $('#' + category).offset().top;
                 $('html, body').animate({
-                    scrollTop: offset - 100
+                    scrollTop: offset - 200
                 }, 1000);
             });
         });

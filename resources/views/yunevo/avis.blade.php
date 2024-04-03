@@ -71,13 +71,15 @@
                                         <p>{{ $review->commentaire }}</p>
 
                                         <div class="icons">
-                                            <form id="delete-review-form-{{ $review->id }}" action="{{ route('delete-review', ['id' => $review->id]) }}" method="POST">
-                                                @csrf
-                                                @method('DELETE')
-                                                <a href="#" onclick="document.getElementById('delete-review-form-{{ $review->id }}').submit()">
-                                                    <img src="{{ secure_asset('images/bin.png') }}" alt="" class="bin" onmouseover="this.style.transform='scale(2)'" onmouseout="this.style.transform='scale(1)'">
-                                                </a>
-                                            </form>
+                                            @if(Auth::check() && $review->personnel_id == Auth::user()->id)
+                                                <form id="delete-review-form-{{ $review->id }}" action="{{ route('delete-review', ['id' => $review->id]) }}" method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <a href="#" onclick="document.getElementById('delete-review-form-{{ $review->id }}').submit()">
+                                                        <img src="{{ secure_asset('images/bin.png') }}" alt="" class="bin" onmouseover="this.style.transform='scale(2)'" onmouseout="this.style.transform='scale(1)'">
+                                                    </a>
+                                                </form>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
