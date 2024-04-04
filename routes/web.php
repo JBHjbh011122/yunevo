@@ -35,6 +35,7 @@ use App\Http\Controllers\CommandeController;
 */
 
 Route::get('/', [AvisController::class, 'showReviewsAccueil']);
+Route::get('/generate-presigned-url', [VideoFormController::class, 'generatePresignedUrl'])->middleware('auth')->name('generate-presigned-url');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
