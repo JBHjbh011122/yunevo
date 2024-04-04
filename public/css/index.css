@@ -230,7 +230,7 @@ h2 {
 /* Image dans la section "Rejoindre l'équipe" */
 .join-team-section img {
     max-width: 25%;
-    height: 100%;
+    height: 25%;
     object-fit: cover;
 }
 
