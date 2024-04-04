@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/chat.css') }}">
     <script defer src="{{ asset('js/index.js') }}"></script>
+    <link rel="icon" type="image/png" sizes="40x40" href="{{ asset('images/favicon.png') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <link href="https://fonts.cdnfonts.com/css/font" rel="stylesheet">

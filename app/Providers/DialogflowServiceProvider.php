@@ -33,7 +33,7 @@ class DialogflowServiceProvider extends ServiceProvider
         if ($decodedJson) {
             putenv('GOOGLE_APPLICATION_CREDENTIALS=' . base_path('ssl/yunevo.json'));
         } else {
-            // 处理错误
+
         }
     }
 }
