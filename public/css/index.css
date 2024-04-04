@@ -276,7 +276,7 @@ h2 {
         flex-direction: column-reverse;
     }
     .join-team-section img {
-        max-width: 100%;
+        max-width: 75%;
         height: auto;
     }
     .advantage-column {
