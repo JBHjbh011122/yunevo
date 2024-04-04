@@ -16,7 +16,7 @@
                 {{-- Commander video --}}
                 @if(Auth::user() && Auth::user()->user_type == 'entraineur')
                 <a href="{{ route('commande-privees-video', ['clientId' => $clientId, 'trainerId' => $trainerId]) }}"
-                    class="btn list-group-item list-group-item-action mt-5 custom-bg font-weight-bold  ">Fournir une vidéo</a>
+                    class="btn list-group-item list-group-item-action mt-5 custom-bg font-weight-bold  ">Fournir des vidéos</a>
                 @endif
             </div>
 
