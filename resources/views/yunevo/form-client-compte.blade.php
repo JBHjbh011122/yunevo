@@ -40,8 +40,8 @@
                             </div>
                             <div class="form-group mb-3">
                                 <x-input type="text" class="form-control text-muted" id="poids_desire"
-                                    name="poids_désiré" placeholder="Poids désiré" :value="old('poids_désiré')" required
-                                    autocomplete="poids_désiré" />
+                                    name="poids_desire" placeholder="Poids désiré" :value="old('poids_desire')" required
+                                    autocomplete="poids_desire" />
                             </div>
 
                             <div class="form-group mb-3">

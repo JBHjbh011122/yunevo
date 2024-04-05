@@ -65,8 +65,6 @@
                                 <textarea class="text-muted" id="description-video" name="description" rows="3">{{ old('description') }}</textarea>
                             </div>
 
-                            <input type="hidden" name="s3_file_path" id="s3_file_path" value="">
-
                             <div class="btn-sauvegarder">
                                 <button type="submit" class="btn btn-primary btn-custom">Ajouter</button>
                             </div>
@@ -97,43 +95,9 @@
         };
 
         function onFileSelected(event) {
-            const file = event.target.files[0];
-            if (!file) {
-                console.log("No file selected.");
-                return;
-            }
-            const fileName = file.name;
-            const fileType = file.type;
-
-            // 请求预签名URL
-            fetch(
-                    `/generate-presigned-url?filename=${encodeURIComponent(fileName)}&filetype=${encodeURIComponent(fileType)}`)
-                .then(response => response.json())
-                .then(data => {
-                    // 使用预签名URL上传文件
-                    uploadFileToS3(file, data.url, data.filePath); // 注意传入filePath
-                })
-                .catch(error => console.error("Error fetching presigned URL", error));
-        }
-
-        function uploadFileToS3(file, presignedUrl, filePath) {
-            fetch(presignedUrl, {
-                    method: 'PUT',
-                    body: file,
-                    headers: {
-                        'Content-Type': file.type,
-                    },
-                })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Upload failed');
-                    }
-                    console.log('Upload successful');
-                    document.getElementById('s3_file_path').value = filePath; // 设置隐藏字段的值为文件路径
-                })
-                .catch(error => {
-                    console.error("Error uploading file to S3", error);
-                });
+            const fileName = event.target.files[0].name;
+            const label = document.querySelector('label[for="video-file"]');
+            label.textContent = fileName;
         }
     </script>
 @endsection
